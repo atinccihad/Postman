@@ -12,6 +12,7 @@ files[] = {"id":"24041749-5ef369ae-c2d5-42ee-9ca3-3a11daba1bc5","path":"API_03.j
 files[] = {"id":"24041749-8336d1ef-13e8-41a9-aa31-6f7f6ce2d6fa","path":"API_04.json","metaData":{}}
 files[] = {"id":"24041749-31885372-20be-4adb-aeea-1a7cf8978d4c","path":"API_Q.json","metaData":{}}
 files[] = {"id":"24041749-754063d9-60c5-4633-8c6c-6f0e70bb0dde","path":"Regres.in.json","metaData":{}}
+files[] = {"id":"24041749-9bd439cb-cd77-4e0a-9ca1-5b72cbb83267","path":"Swagger Petstore.json","metaData":{}}
 
 [relations.collections.metaData]
 
