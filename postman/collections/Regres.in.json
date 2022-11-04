@@ -1,0 +1,521 @@
+{
+	"info": {
+		"_postman_id": "754063d9-60c5-4633-8c6c-6f0e70bb0dde",
+		"name": "Regres.in",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-754063d9-60c5-4633-8c6c-6f0e70bb0dde"
+	},
+	"item": [
+		{
+			"name": "GETREQUEST",
+			"item": [
+				{
+					"name": "single unkown",
+					"id": "0c13c5d8-15c9-41a2-92a7-3c7daf1e1101",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/unkown/5",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"unkown",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unkown",
+					"id": "e189183f-4b45-4885-bdbc-cf9ebe47cf99",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/unkown",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"unkown"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "single user list",
+					"id": "58ebdd83-b4aa-4bd2-8c50-4710b1eccd60",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users/3",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user listeleme",
+					"id": "f0420c51-dae9-4449-b950-919052120e47",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users?page=2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delay",
+					"id": "56532a89-d542-4a44-a9c7-d888e0cd4e6c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users?delay=2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "delay",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "2bb5ca14-1e41-4381-995f-53f9a1b28c15"
+		},
+		{
+			"name": "POSTREQUEST",
+			"item": [
+				{
+					"name": "user created",
+					"id": "c46e460d-f658-4330-8256-a1c5ed8cfc8d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"cihad\",\"surname\":\"atınç\",\r\n    \"job\": \"qa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token alma",
+					"id": "6018cd91-3a86-4e8a-baf1-53afc0e97187",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"eve.holt@reqres.in\",\r\n    \"password\":\"pistol\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/register",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "gecersiz token alma",
+					"id": "9b434057-08fa-4af9-8136-635694eab97c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sydney@fife\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/register",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "ac7a1ceb-3dfb-43b9-8553-d65199a7d102"
+		},
+		{
+			"name": "PUTREQUEST",
+			"item": [
+				{
+					"name": "put",
+					"id": "3fe7aeaf-9abb-4321-8655-b2e4fba38699",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users/2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "ef716c95-4abb-4636-bbad-9af73ae60421"
+		},
+		{
+			"name": "PATCHREQUEST",
+			"item": [
+				{
+					"name": "patch",
+					"id": "b9916b07-5374-4360-86df-5a15645ec0fb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"monica\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users/2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "5d79443f-d6c2-4e32-8838-e1e55e7e6cb0"
+		},
+		{
+			"name": "DELETEREQUEST",
+			"item": [
+				{
+					"name": "delete",
+					"id": "93088854-7a88-4082-85a6-388b369671c8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users/2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "c59eb077-70aa-4f18-92ad-99162fa8b3c4"
+		},
+		{
+			"name": "PETSTORE",
+			"item": [
+				{
+					"name": "GETREQUEST",
+					"item": [
+						{
+							"name": "status a gore listeleme",
+							"id": "d2cdec4a-d774-4022-b035-a5bc25c44393",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://petstore.swagger.io/v2/pet/findByStatus?status=pending&status=sold",
+									"protocol": "https",
+									"host": [
+										"petstore",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"v2",
+										"pet",
+										"findByStatus"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "pending"
+										},
+										{
+											"key": "status",
+											"value": "sold"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "id ye gore pet listeleme",
+							"id": "ce252ffc-7208-499b-a459-feb4df102bbe",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://petstore.swagger.io/v2/pet/99",
+									"protocol": "https",
+									"host": [
+										"petstore",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"v2",
+										"pet",
+										"99"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "2607c13b-ec68-4970-bb37-ee6ae8815cfb"
+				},
+				{
+					"name": "POSTREQUEST",
+					"item": [
+						{
+							"name": "pet ekleme",
+							"id": "92c7e38f-5f29-4ff5-b9b4-6c3c45107ca6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 99,\r\n  \"category\": {\r\n    \"id\": 99,\r\n    \"name\": \"proboscis\"\r\n  },\r\n  \"name\": \"elephant\",\r\n  \"photoUrls\": [\r\n    \"https://en.wikipedia.org/wiki/Elephant#/media/File:Elephant_Diversity.jpg\"\r\n  ],\r\n  \"tags\": [\r\n    {\r\n      \"id\": 99,\r\n      \"name\": \"proboscis\"\r\n    }\r\n  ],\r\n  \"status\": \"available\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://petstore.swagger.io/v2/pet/100",
+									"protocol": "https",
+									"host": [
+										"petstore",
+										"swagger",
+										"io"
+									],
+									"path": [
+										"v2",
+										"pet",
+										"100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "https://reqres.in/api/users/",
+							"id": "7bb1bad7-6954-4a3c-bc65-9d1d58520e7b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"1800\",\r\n    \"createdAt\": \"2022-11-03T15:00:53.767Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://reqres.in/api/users/",
+									"protocol": "https",
+									"host": [
+										"reqres",
+										"in"
+									],
+									"path": [
+										"api",
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "8fbc2d5d-bb22-4aa5-8656-a11fe9018cc6"
+				}
+			],
+			"id": "2d2a7034-e24f-4c3d-850b-eebc11849f27"
+		}
+	]
+}
