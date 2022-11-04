@@ -1723,20 +1723,13 @@
 									}
 								],
 								"url": {
-									"raw": "{{baseUrl}}/user/:username",
+									"raw": "{{baseUrl}}/cihad/atinc",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
-										"user",
-										":username"
-									],
-									"variable": [
-										{
-											"key": "username",
-											"value": "consectetur irure ea",
-											"description": "(Required) The name that needs to be fetched. Use user1 for testing. "
-										}
+										"cihad",
+										"atinc"
 									]
 								}
 							},
