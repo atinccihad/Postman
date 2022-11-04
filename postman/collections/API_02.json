@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "c43f2b25-1fc7-4b09-b153-98a3ec07d4fb",
+		"name": "API_02",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-c43f2b25-1fc7-4b09-b153-98a3ec07d4fb"
+	},
+	"item": [
+		{
+			"name": "https://petstore.swagger.io/#/pet/updatePet",
+			"id": "62e33c4f-95ae-48be-a695-107c3f9c8a46",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/1000",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://restful-booker.herokuapp.com/booking/12634",
+			"id": "17228ef8-4648-4c23-b08f-0571c6c128b6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"mah\",\r\n    \"lastname\": \"Sevilla\",\r\n    \"totalprice\": 111,\r\n    \"depositpaid\": false,\r\n    \"bookingdates\": {\r\n        \"checkin\": \"2016-01-01\",\r\n        \"checkout\": \"2019-01-01\"\r\n    },\r\n    \"additionalneeds\": \"Breakfast\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/12634",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"12634"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://jsonplaceholder.typicode.com/todos/199",
+			"id": "3e162878-1146-455d-bb39-db663c5d33e2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 12,\r\n    \"id\": 199,\r\n    \"title\": \"hi\",\r\n    \"completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos/199",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos",
+						"199"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://jsonplaceholder.typicode.com/todos/",
+			"id": "80c6816f-affa-4628-8ceb-4ecd66657255",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"userId\": 1,\r\n        \"id\": 201,\r\n        \"title\": \"autem\",\r\n        \"completed\": true\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos/",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://restful-booker.herokuapp.com/booking/1000",
+			"id": "428205a3-10cb-45a4-8ccf-102fa29dbd7d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://jsonplaceholder.typicode.com/todos/1",
+			"id": "987818e7-d1cf-4f41-aca3-172c7744973d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 3,\r\n    \"id\": 10,\r\n    \"title\": \"autem\",\r\n    \"completed\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users/1005",
+			"id": "ae069627-11ff-47b1-bdf0-d89e2e9b2c5d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": {\r\n        \"id\": 1005,\r\n        \"email\": \"wong@reqres.in\"\r\n    },\r\n    \"support\": {\r\n        \"text\": \"maybe!\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users/1005",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"1005"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://www.gmibank.com/api/tp-customers/114351",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b7b0ee5c-fc0e-477b-96dd-c00f6c9d26bd",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Name Test\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Della\");\r",
+							"});\r",
+							"pm.test(\"First Name Test\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response.firstName).to.eql(\"Della\");\r",
+							"});\r",
+							"pm.test(\"Phone Number\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response.phoneNumber).to.eql(\"213-456-7893\");\r",
+							"});\r",
+							"pm.test(\"Credit Card Bakiye Testi\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response.accounts[0].balance).to.eql(69700);\r",
+							"});\r",
+							"pm.test(\"Cheking Bakiye Testi\", function () {\r",
+							"    var response = pm.response.json();\r",
+							"    pm.expect(response.accounts[1].balance).to.eql(11190);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5a194dd3-8321-4bd8-9267-6b10010482c6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYXRjaDgxIiwiYXV0aCI6IlJPTEVfQURNSU4iLCJleHAiOjE2NjcwNjYxMjB9.0PGZYnj1UKSPxJqvYVOIpWLLBTnrAVyKn-vNlRq_JXu8r3B9UqPMtVkF0RkXi12i2XPhuDyGIRNY8H9_hxAoPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"info\": {\r\n\t\t\"_postman_id\": \"26ffe0eb-7296-4eb8-ae09-a6696ac3d3c6\",\r\n\t\t\"name\": \"Batch81\",\r\n\t\t\"schema\": \"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\",\r\n\t\t\"_exporter_id\": \"14360503\"\r\n\t},\r\n\t\"item\": [\r\n\t\t{\r\n\t\t\t\"name\": \"Regres.in\",\r\n\t\t\t\"item\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"name\": \"New Request\",\r\n\t\t\t\t\t\"request\": {\r\n\t\t\t\t\t\t\"method\": \"GET\",\r\n\t\t\t\t\t\t\"header\": [],\r\n\t\t\t\t\t\t\"url\": {\r\n\t\t\t\t\t\t\t\"raw\": \"https://reqres.in/api/users?page=1\",\r\n\t\t\t\t\t\t\t\"protocol\": \"https\",\r\n\t\t\t\t\t\t\t\"host\": [\r\n\t\t\t\t\t\t\t\t\"reqres\",\r\n\t\t\t\t\t\t\t\t\"in\"\r\n\t\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\t\"path\": [\r\n\t\t\t\t\t\t\t\t\"api\",\r\n\t\t\t\t\t\t\t\t\"users\"\r\n\t\t\t\t\t\t\t],\r\n\t\t\t\t\t\t\t\"query\": [\r\n\t\t\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\t\t\"key\": \"page\",\r\n\t\t\t\t\t\t\t\t\t\"value\": \"1\"\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"response\": []\r\n\t\t\t\t}\r\n\t\t\t]\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"Herokuapp\",\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"method\": \"GET\",\r\n\t\t\t\t\"header\": [],\r\n\t\t\t\t\"url\": {\r\n\t\t\t\t\t\"raw\": \"https://restful-booker.herokuapp.com/booking\",\r\n\t\t\t\t\t\"protocol\": \"https\",\r\n\t\t\t\t\t\"host\": [\r\n\t\t\t\t\t\t\"restful-booker\",\r\n\t\t\t\t\t\t\"herokuapp\",\r\n\t\t\t\t\t\t\"com\"\r\n\t\t\t\t\t],\r\n\t\t\t\t\t\"path\": [\r\n\t\t\t\t\t\t\"booking\"\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"response\": []\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"GMIBank\",\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"auth\": {\r\n\t\t\t\t\t\"type\": \"bearer\",\r\n\t\t\t\t\t\"bearer\": [\r\n\t\t\t\t\t\t{\r\n\t\t\t\t\t\t\t\"key\": \"token\",\r\n\t\t\t\t\t\t\t\"value\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYXRjaDgxIiwiYXV0aCI6IlJPTEVfQURNSU4iLCJleHAiOjE2NjcwNjYxMjB9.0PGZYnj1UKSPxJqvYVOIpWLLBTnrAVyKn-vNlRq_JXu8r3B9UqPMtVkF0RkXi12i2XPhuDyGIRNY8H9_hxAoPw\",\r\n\t\t\t\t\t\t\t\"type\": \"string\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t},\r\n\t\t\t\t\"method\": \"GET\",\r\n\t\t\t\t\"header\": [],\r\n\t\t\t\t\"url\": {\r\n\t\t\t\t\t\"raw\": \"https://www.gmibank.com/api/tp-customers\",\r\n\t\t\t\t\t\"protocol\": \"https\",\r\n\t\t\t\t\t\"host\": [\r\n\t\t\t\t\t\t\"www\",\r\n\t\t\t\t\t\t\"gmibank\",\r\n\t\t\t\t\t\t\"com\"\r\n\t\t\t\t\t],\r\n\t\t\t\t\t\"path\": [\r\n\t\t\t\t\t\t\"api\",\r\n\t\t\t\t\t\t\"tp-customers\"\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"response\": []\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"https://restful-booker.herokuapp.com/auth\",\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"header\": [],\r\n\t\t\t\t\"body\": {\r\n\t\t\t\t\t\"mode\": \"raw\",\r\n\t\t\t\t\t\"raw\": \"{\\n    \\\"username\\\" : \\\"admin\\\",\\n    \\\"password\\\" : \\\"password123\\\"\\n}\",\r\n\t\t\t\t\t\"options\": {\r\n\t\t\t\t\t\t\"raw\": {\r\n\t\t\t\t\t\t\t\"language\": \"json\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t},\r\n\t\t\t\t\"url\": {\r\n\t\t\t\t\t\"raw\": \"https://restful-booker.herokuapp.com/auth\",\r\n\t\t\t\t\t\"protocol\": \"https\",\r\n\t\t\t\t\t\"host\": [\r\n\t\t\t\t\t\t\"restful-booker\",\r\n\t\t\t\t\t\t\"herokuapp\",\r\n\t\t\t\t\t\t\"com\"\r\n\t\t\t\t\t],\r\n\t\t\t\t\t\"path\": [\r\n\t\t\t\t\t\t\"auth\"\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"response\": []\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"https://www.gmibank.com/api/authenticate\",\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"header\": [],\r\n\t\t\t\t\"body\": {\r\n\t\t\t\t\t\"mode\": \"raw\",\r\n\t\t\t\t\t\"raw\": \"{\\n  \\\"password\\\": \\\"Batch81+\\\",\\n  \\\"rememberMe\\\": true,\\n  \\\"username\\\": \\\"Batch81\\\"\\n}\",\r\n\t\t\t\t\t\"options\": {\r\n\t\t\t\t\t\t\"raw\": {\r\n\t\t\t\t\t\t\t\"language\": \"json\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t},\r\n\t\t\t\t\"url\": {\r\n\t\t\t\t\t\"raw\": \"https://www.gmibank.com/api/authenticate\",\r\n\t\t\t\t\t\"protocol\": \"https\",\r\n\t\t\t\t\t\"host\": [\r\n\t\t\t\t\t\t\"www\",\r\n\t\t\t\t\t\t\"gmibank\",\r\n\t\t\t\t\t\t\"com\"\r\n\t\t\t\t\t],\r\n\t\t\t\t\t\"path\": [\r\n\t\t\t\t\t\t\"api\",\r\n\t\t\t\t\t\t\"authenticate\"\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"response\": []\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"https://dummy.restapiexample.com/api/v1/employees\",\r\n\t\t\t\"request\": {\r\n\t\t\t\t\"method\": \"GET\",\r\n\t\t\t\t\"header\": [],\r\n\t\t\t\t\"url\": {\r\n\t\t\t\t\t\"raw\": \"https://dummy.restapiexample.com/api/v1/employees\",\r\n\t\t\t\t\t\"protocol\": \"https\",\r\n\t\t\t\t\t\"host\": [\r\n\t\t\t\t\t\t\"dummy\",\r\n\t\t\t\t\t\t\"restapiexample\",\r\n\t\t\t\t\t\t\"com\"\r\n\t\t\t\t\t],\r\n\t\t\t\t\t\"path\": [\r\n\t\t\t\t\t\t\"api\",\r\n\t\t\t\t\t\t\"v1\",\r\n\t\t\t\t\t\t\"employees\"\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"response\": []\r\n\t\t}\r\n\t]\r\n}"
+				},
+				"url": {
+					"raw": "https://www.gmibank.com/api/tp-customers/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"gmibank",
+						"com"
+					],
+					"path": [
+						"api",
+						"tp-customers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "0f298b9e-b8b2-4072-9ca0-642ed78526a6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "453a67e1-6f3e-4027-8b75-2706115849d3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "17323def-e68e-4b22-b6a6-2daf3a20ff64",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
