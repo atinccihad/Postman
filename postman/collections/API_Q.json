@@ -1,0 +1,478 @@
+{
+	"info": {
+		"_postman_id": "31885372-20be-4adb-aeea-1a7cf8978d4c",
+		"name": "API_Q",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-31885372-20be-4adb-aeea-1a7cf8978d4c"
+	},
+	"item": [
+		{
+			"name": "Resgres.in",
+			"item": [
+				{
+					"name": "GetRequest",
+					"id": "4bda2245-ea56-4c4a-bbb6-d6b9c7429921",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users?page=2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://reqres.in/",
+					"id": "3e4d0b2e-1a72-42a5-b6b9-aa78a9727ca0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://reqres.in/api/users?page=2",
+					"id": "80d130fb-80ec-46b2-a152-b58ed9b661da",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users?page=2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://reqres.in/api/unknown/",
+					"id": "5e3e663f-9ee7-4afc-a100-06718caa200d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/unknown/",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"unknown",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "135ca832-deaf-4f30-bdeb-8af16b7ca5a7"
+		},
+		{
+			"name": "API Beginner",
+			"item": [
+				{
+					"name": "ListUsers",
+					"id": "dd9a669a-e19c-48a5-be9e-38db1cf82cd2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users?page=2",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SingleUser",
+					"id": "1e57b350-1573-4ec6-8602-494c9a7b1ff5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users/4",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Single Not Found",
+					"id": "07b96f16-628d-4a8a-afe3-c5fc63d9a5d1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://reqres.in/api/users/23",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SingleUserNotFound",
+					"id": "79b84c67-f8a4-4ebc-a70b-9731ef572812",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users/",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "90ae763b-260f-4e97-8fea-f2373c477711"
+		},
+		{
+			"name": "GMIbank",
+			"item": [
+				{
+					"name": "htps://www.gmibank.com/api/tp-customers",
+					"id": "e33e7159-5760-4871-b1a7-154bb36121f1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJiYXRjaDgxIiwiYXV0aCI6IlJPTEVfQURNSU4iLCJleHAiOjE2NjcwNjYxMjB9.0PGZYnj1UKSPxJqvYVOIpWLLBTnrAVyKn-vNlRq_JXu8r3B9UqPMtVkF0RkXi12i2XPhuDyGIRNY8H9_hxAoPw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "htps://www.gmibank.com/api/tp-customers",
+							"protocol": "htps",
+							"host": [
+								"www",
+								"gmibank",
+								"com"
+							],
+							"path": [
+								"api",
+								"tp-customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "htps://www.gmibank.com/api/authenticate",
+					"id": "6ea6c04b-c1d5-4bfd-bf03-1cf2dd3b671c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"Batch81+\",\r\n    \"rememberMe\":true,\r\n    \"username\":\"Batch81\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "htps://www.gmibank.com/api/authenticate",
+							"protocol": "htps",
+							"host": [
+								"www",
+								"gmibank",
+								"com"
+							],
+							"path": [
+								"api",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "a9a9ef74-2b7e-430c-a795-fde783988b63"
+		},
+		{
+			"name": "Heroku",
+			"item": [
+				{
+					"name": "Herokuapp",
+					"id": "1ab3f0c0-1b4e-4a06-a5f4-c4de53821859",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://restful-booker.herokuapp.com/apidoc/index.html",
+					"id": "a14b7e1f-e472-4e46-8c45-ec25b2bed1fe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\" : \"admin\",\r\n\"password\" : \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/auth",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://restful-booker.herokuapp.com/booking",
+					"id": "a7e0d48c-f08a-4af4-981d-5a8bc3294148",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://restful-booker.herokuapp.com/booking?firstname=Almedin&lastname=Alikadic",
+					"id": "c48080a6-28a0-4765-9d46-1e099e8ce7dc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking?firstname=Almedin&lastname=Alikadic",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "Almedin"
+								},
+								{
+									"key": "lastname",
+									"value": "Alikadic"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "03cfe7e3-2d7a-46df-90f8-cadffba52c6e"
+		},
+		{
+			"name": "AutomationExcercise",
+			"item": [
+				{
+					"name": "https://automationexercise.com/api",
+					"id": "2c6f77dd-c7aa-469e-851b-d9a5e3cb510f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://automationexercise.com/api",
+							"protocol": "https",
+							"host": [
+								"automationexercise",
+								"com"
+							],
+							"path": [
+								"api"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "7f40b330-9a4b-49ed-9da1-c8fe36528d5d"
+		}
+	]
+}
