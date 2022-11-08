@@ -173,6 +173,31 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get Request",
+			"id": "b12d7007-da03-4be8-a9fe-e250d9a4310e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://restful-booker.herokuapp.com/booking/",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
