@@ -317,7 +317,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "https://restful-booker.herokuapp.com/booking/7/",
 			"id": "0f298b9e-b8b2-4072-9ca0-642ed78526a6",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
