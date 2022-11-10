@@ -183,16 +183,21 @@
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "https://restful-booker.herokuapp.com/booking/",
+					"raw": "https://www.gmibank.com/api/tp-countries/",
 					"protocol": "https",
 					"host": [
-						"restful-booker",
-						"herokuapp",
+						"www",
+						"gmibank",
 						"com"
 					],
 					"path": [
-						"booking",
+						"api",
+						"tp-countries",
 						""
 					]
 				}
