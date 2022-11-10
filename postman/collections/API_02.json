@@ -161,7 +161,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://reqres.in/api/users",
+					"raw": "https://reqres.in/api/users/",
 					"protocol": "https",
 					"host": [
 						"reqres",
@@ -169,7 +169,8 @@
 					],
 					"path": [
 						"api",
-						"users"
+						"users",
+						""
 					]
 				}
 			},
