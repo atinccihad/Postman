@@ -326,7 +326,18 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "https://restful-booker.herokuapp.com/booking/7/",
+					"protocol": "https",
+					"host": [
+						"restful-booker",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"booking",
+						"7",
+						""
+					]
 				}
 			},
 			"response": []
