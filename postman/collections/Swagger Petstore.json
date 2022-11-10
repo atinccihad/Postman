@@ -2137,7 +2137,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": -84312298,\n  \"username\": \"tempor sunt esse\",\n  \"firstName\": \"ut sint\",\n  \"lastName\": \"nulla ut\",\n  \"email\": \"veniam sint Duis\",\n  \"password\": \"sint in elit non ut\",\n  \"phone\": \"labore\",\n  \"userStatus\": -49484200\n}",
+							"raw": "{\n  \"id\": -84312298,\n  \"username\": \"Sarı\",\n  \"firstName\": \"Ömer\",\n  \"lastName\": \"Yıldız\",\n  \"email\": \"omersarı@gmail.com\",\n  \"password\": \"sarıSarıKiminYarıEnGüzeliBenimSarı\",\n  \"phone\": \"532897456\",\n  \"userStatus\": -49484200\n}",
 							"options": {
 								"raw": {
 									"language": "json"
