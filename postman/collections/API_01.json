@@ -188,17 +188,17 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://www.gmibank.com/api/tp-countries/",
+					"raw": "https://dummy.restapiexample.com/api/v1/employees",
 					"protocol": "https",
 					"host": [
-						"www",
-						"gmibank",
+						"dummy",
+						"restapiexample",
 						"com"
 					],
 					"path": [
 						"api",
-						"tp-countries",
-						""
+						"v1",
+						"employees"
 					]
 				}
 			},
