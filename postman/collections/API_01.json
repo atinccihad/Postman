@@ -203,6 +203,42 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "https://dummy.restapiexample.com/api/v1/create",
+			"id": "16c6de8f-9787-41f8-b69a-921e3c8e3a5d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\":\"Cihad Atınç\",\r\n   \"salary\":\"1000\",\r\n   \"age\":\"34\",\r\n   \"profile_image\":\"https://github.com/atinccihad\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummy.restapiexample.com/api/v1/create/",
+					"protocol": "https",
+					"host": [
+						"dummy",
+						"restapiexample",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"create",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
