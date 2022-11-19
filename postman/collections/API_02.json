@@ -342,6 +342,21 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users/2",
+			"id": "dfbee560-b077-4ec7-a3da-f5cc466b954f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {
