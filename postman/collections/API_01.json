@@ -239,6 +239,36 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "https://reqres.in/api/users?page=2",
+			"id": "7353413d-781b-41cc-b412-3a0fb79b8ad6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users?page=2",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
