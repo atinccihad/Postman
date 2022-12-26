@@ -348,6 +348,10 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "https://reqres.in/api/users/2",
 							"protocol": "https",
