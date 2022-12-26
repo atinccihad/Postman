@@ -19,7 +19,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://reqres.in/api/unkown/5",
+							"raw": "https://reqres.in/api/unkown/6",
 							"protocol": "https",
 							"host": [
 								"reqres",
@@ -28,7 +28,7 @@
 							"path": [
 								"api",
 								"unkown",
-								"5"
+								"6"
 							]
 						}
 					},
