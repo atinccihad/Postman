@@ -310,7 +310,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"monica\"\r\n}",
+							"raw": "{\r\n    \"name\": \"patchRequestKismiBilgileriDegismekIcinUygunYontemdir\",\r\n    \"job\": \"automationTester\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
