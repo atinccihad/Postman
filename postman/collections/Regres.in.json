@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "GETREQUEST",
+			"name": "GetRequest",
 			"item": [
 				{
 					"name": "single unkown",
@@ -152,7 +152,7 @@
 			"id": "2bb5ca14-1e41-4381-995f-53f9a1b28c15"
 		},
 		{
-			"name": "POSTREQUEST",
+			"name": "PostRequest",
 			"item": [
 				{
 					"name": "user created",
@@ -257,7 +257,7 @@
 			"id": "ac7a1ceb-3dfb-43b9-8553-d65199a7d102"
 		},
 		{
-			"name": "PUTREQUEST",
+			"name": "PutRequest",
 			"item": [
 				{
 					"name": "put",
@@ -270,7 +270,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\"\r\n}",
+							"raw": "{\r\n    \"name\": \"putRequestTumBilgileriDegismekIcinUygunYontemdir\",\r\n    \"job\": \"automationTester\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -297,7 +297,7 @@
 			"id": "ef716c95-4abb-4636-bbad-9af73ae60421"
 		},
 		{
-			"name": "PATCHREQUEST",
+			"name": "PatchRequest",
 			"item": [
 				{
 					"name": "patch",
@@ -337,7 +337,7 @@
 			"id": "5d79443f-d6c2-4e32-8838-e1e55e7e6cb0"
 		},
 		{
-			"name": "DELETEREQUEST",
+			"name": "DeleteRequest",
 			"item": [
 				{
 					"name": "delete",
