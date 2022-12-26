@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "ae189f03-6626-463a-a3f8-385f708f364e",
+		"name": "com.librarydreams",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-ae189f03-6626-463a-a3f8-385f708f364e"
+	},
+	"item": [
+		{
+			"name": "projectTest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a1240ed4-c75f-4f02-8ca8-2dc252608f36",
+						"exec": [
+							"pm.test(\"Status code is 404\",function(){\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"pm.test(\"Content-Type is present\",function(){\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"Status code is 200\",function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "dd105a47-5b57-4ebf-a5d2-3d428191bbaa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjYiLCJpYXQiOjE2NzIwODQyMjUsImV4cCI6MTY3MjE3MDYyNX0.nJrBqlW70RrzWMuuZ85uIoZRFjc4I-Pw5USvpoHQPz__K4EljpGO9B8eZ079RwC3EVE-vPnwK2KONf9PPLczGg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.libraryd-app-backend-v2.herokuapp.com/user/25",
+					"protocol": "https",
+					"host": [
+						"www",
+						"libraryd-app-backend-v2",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"25"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

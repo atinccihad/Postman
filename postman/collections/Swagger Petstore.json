@@ -2559,6 +2559,27 @@
 				}
 			],
 			"id": "37bba9d1-1120-46a6-b43d-0a5efbab6fa3"
+		},
+		{
+			"name": "GetRequest",
+			"item": [
+				{
+					"name": "id ye gore pet listeleme",
+					"id": "87293a22-d8c5-4eec-aea1-91981af52f6b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "588dd477-84ab-46f0-b43b-27ef069b8fb4"
 		}
 	],
 	"variable": [
