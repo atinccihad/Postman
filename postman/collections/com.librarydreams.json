@@ -7,64 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "projectTest",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "a1240ed4-c75f-4f02-8ca8-2dc252608f36",
-						"exec": [
-							"pm.test(\"Status code is 404\",function(){\r",
-							"    pm.response.to.have.status(404);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Content-Type is present\",function(){\r",
-							"    pm.response.to.have.header(\"Content-Type\");\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Status code is 200\",function(){\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"id": "dd105a47-5b57-4ebf-a5d2-3d428191bbaa",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjYiLCJpYXQiOjE2NzIwODQyMjUsImV4cCI6MTY3MjE3MDYyNX0.nJrBqlW70RrzWMuuZ85uIoZRFjc4I-Pw5USvpoHQPz__K4EljpGO9B8eZ079RwC3EVE-vPnwK2KONf9PPLczGg",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://www.libraryd-app-backend-v2.herokuapp.com/user/25",
-					"protocol": "https",
-					"host": [
-						"www",
-						"libraryd-app-backend-v2",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"user",
-						"25"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "testAntrenman",
 			"event": [
 				{
@@ -80,6 +22,14 @@
 							"pm.test(\"Invalid Status code test\",function(){\r",
 							"pm.response.to.have.status(404);\r",
 							"});\r",
+							"\r",
+							"// if statement\r",
+							"if(responseBody.status){\r",
+							"    tests[\"200 SUCCESS\"] = responseBody.has(\"SUCCESS\");\r",
+							"    console.log(\"PASS\");\r",
+							"}else{\r",
+							"   console.log(\"FAIL\");\r",
+							"}\r",
 							"\r",
 							"// Testlerimiz, yanıt veri formatına uyarladığınız sözdizimini kullanarak istek yanıtlarının geçerliliğini sağlayabilir.\r",
 							"pm.test(\"response must be valid and have a body\", function () {\r",
