@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "testAntrenman",
+			"name": "testPractice",
 			"event": [
 				{
 					"listen": "test",
@@ -23,13 +23,15 @@
 							"pm.response.to.have.status(404);\r",
 							"});\r",
 							"\r",
+							"\r",
 							"// if statement\r",
-							"if(responseBody.status){\r",
-							"    tests[\"200 SUCCESS\"] = responseBody.has(\"SUCCESS\");\r",
-							"    console.log(\"PASS\");\r",
-							"}else{\r",
-							"   console.log(\"FAIL\");\r",
-							"}\r",
+							"pm.test(\"statusCode if statement\",function(){\r",
+							"    if(responseBody.status===200){\r",
+							"        console.log(\"PASS\");\r",
+							"    }else{\r",
+							"        console.log(\"FAIL\");\r",
+							"    }\r",
+							"});\r",
 							"\r",
 							"// Testlerimiz, yanıt veri formatına uyarladığınız sözdizimini kullanarak istek yanıtlarının geçerliliğini sağlayabilir.\r",
 							"pm.test(\"response must be valid and have a body\", function () {\r",
@@ -49,10 +51,7 @@
 							"// Response time is less than 200ms ?\r",
 							"pm.test(\"Response time is less than 200ms\",function(){\r",
 							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});\r",
-							"\r",
-							"\r",
-							""
+							"});"
 						],
 						"type": "text/javascript"
 					}
