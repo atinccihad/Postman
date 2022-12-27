@@ -63,6 +63,73 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "testAntrenman",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "07d761f9-e0ee-44b5-9282-b927350542db",
+						"exec": [
+							"// positive\r",
+							"pm.test(\"Valid Status code test\",function(){\r",
+							"pm.response.to.have.status(200);\r",
+							"});\r",
+							"// negative\r",
+							"pm.test(\"Invalid Status code test\",function(){\r",
+							"pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"// Testlerimiz, yanıt veri formatına uyarladığınız sözdizimini kullanarak istek yanıtlarının geçerliliğini sağlayabilir.\r",
+							"pm.test(\"response must be valid and have a body\", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"// statusCode assert method\r",
+							"tests['Request resulted in 200 OK'] = responseCode.code === 200;\r",
+							"\r",
+							"// Content-Type is present(sunuldu mu?)\r",
+							"pm.test(\"Content-Type is present\",function(){\r",
+							"    pm.response.to.have.header(\"Content-Type\"); \r",
+							"});\r",
+							"\r",
+							"// Response time is less than 200ms ?\r",
+							"pm.test(\"Response time is less than 200ms\",function(){\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2a3e823a-b7cd-445d-bf74-c1c377300da4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://library-app-backend-v2.herokuapp.com/publishers/2",
+					"protocol": "https",
+					"host": [
+						"library-app-backend-v2",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"publishers",
+						"2"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
