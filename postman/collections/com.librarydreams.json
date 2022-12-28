@@ -79,6 +79,188 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "https://library-app-backend-v2.herokuapp.com/publishers/32",
+			"id": "e0fb67b6-0a81-4c46-804f-92e688d2d890",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/publishers/32",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"publishers",
+						"32"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "publishers_tc01",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf557f58-b714-43ae-8e88-d2f84ad86962",
+						"exec": [
+							"// statusCode test\r",
+							"pm.test(\"Status code test PASS\",function(){\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// if statement\r",
+							"pm.test(\"statusCode if statement PASS\",function(){\r",
+							"    if(responseBody.status===200){\r",
+							"        console.log(\"PASS\");\r",
+							"    }else{\r",
+							"        console.log(\"FAIL\");\r",
+							"    };\r",
+							"});\r",
+							"\r",
+							"// Testlerimiz, yanıt veri formatına uyarladığınız sözdizimini kullanarak istek yanıtlarının geçerliliğini sağlayabilir.\r",
+							"pm.test(\"response must be valid and have a body PASS\", function () {\r",
+							"     pm.response.to.be.ok;\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"// statusCode assert method\r",
+							"tests['Request resulted in 200 OK, PASS'] = responseCode.code === 200;\r",
+							"\r",
+							"// Content-Type is present(sunuldu mu?)\r",
+							"pm.test(\"Content-Type is present\",function(){\r",
+							"    pm.response.to.have.header(\"Content-Type\"); \r",
+							"    if(responseBody.status===200){\r",
+							"        console.log(\"PASS\");\r",
+							"    }else{\r",
+							"        console.log(\"FAIL\");\r",
+							"    }; \r",
+							"});\r",
+							"\r",
+							"// Response time is less than 200ms ?\r",
+							"pm.test(\"Response time is less than 200ms\",function(){\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "6e2b62d5-33c9-4b53-ae92-5024192e56f2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/publishers?page=15&size=10&sort=name&type=asc",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"publishers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "15"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "name"
+						},
+						{
+							"key": "type",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/publishers/32?name=abakü",
+			"id": "1558ea79-c717-4e5e-8f6b-e39bcd10fe81",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/publishers/32?\"name\"=\"abakü\"",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"publishers",
+						"32"
+					],
+					"query": [
+						{
+							"key": "\"name\"",
+							"value": "\"abakü\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "publishers_post",
+			"id": "a72d7565-d96e-4e48-8d46-99aa57e5c7c4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjYiLCJpYXQiOjE2NzIyNTI0NDAsImV4cCI6MTY3MjMzODg0MH0.H9tUE5ewBaDwbmFiGgYHd1ik9XPsLTNG-yCRBoL6CU_EKZPdphgDK99BOGGwQh6hU-eD6NCPku6g3TV4QBfY3g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"HarperCollins\",\r\n  \"builtIn\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/publishers",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"publishers"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
