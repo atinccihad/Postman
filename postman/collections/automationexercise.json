@@ -243,6 +243,52 @@
 		},
 		{
 			"name": "postToSearchProductWithoutSearchProductParameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d27e50df-dcdf-4ae7-b25f-c3814b704b3d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let count = 0;\r",
+							"\r",
+							"let expectedResponseMessage = \"Bad request, search_product parameter is missing in POST request.\";\r",
+							"let actualResponseMessage = pm.response.text();\r",
+							"\r",
+							"console.log(actualResponseMessage.valueOf());\r",
+							"\r",
+							"pm.test(\"response message test\",function(){\r",
+							"if( actualResponseMessage.valueOf().match(expectedResponseMessage)){\r",
+							"    console.log(\"1-PASS\");\r",
+							"    count++;\r",
+							" }else{\r",
+							"    console.log(\"1-FAIL\");\r",
+							" }\r",
+							"});\r",
+							"\r",
+							"let expectedResponseCode = 400;\r",
+							"let actualResponseCode = pm.response.text();\r",
+							"\r",
+							"if(actualResponseCode.valueOf().match(expectedResponseCode)){\r",
+							"    console.log(\"2-PASS\");\r",
+							"    count++;\r",
+							" }else{\r",
+							"    console.log(\"2-FAIL\");\r",
+							"};\r",
+							"\r",
+							"if(count===2){\r",
+							"    console.log(\"all PASS\");\r",
+							"}else{\r",
+							"    console.log(\"all FAIL\");\r",
+							"};"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "b6b20c72-73d6-4b31-898f-19b5c6f9593a",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -251,7 +297,19 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "{{automationUrl}}/searchProduct?search_product/",
+					"host": [
+						"{{automationUrl}}"
+					],
+					"path": [
+						"searchProduct"
+					],
+					"query": [
+						{
+							"key": "search_product/",
+							"value": null
+						}
+					]
 				}
 			},
 			"response": []
