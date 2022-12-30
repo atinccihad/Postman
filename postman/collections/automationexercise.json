@@ -93,6 +93,41 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "getAllBrandsList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e80f9d3b-5e75-47b6-87ee-fa8b499933ed",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "024cb014-2af6-47f7-86e0-ffefbe5915e6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{automationUrl}}/brandsList",
+					"host": [
+						"{{automationUrl}}"
+					],
+					"path": [
+						"brandsList"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
