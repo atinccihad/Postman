@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "10b5b416-7504-4183-891d-7d94eb5dab3d",
+		"name": "automationExercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-10b5b416-7504-4183-891d-7d94eb5dab3d"
+	},
+	"item": [
+		{
+			"name": "getAllProductsList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e4185539-b802-47ae-b4b7-cab20b3fdf95",
+						"exec": [
+							"// Status code is 200?\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "cf702fce-db1d-43c1-88cc-bcdcd151d1c2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "JeXcsSN0U8F32EkBZooLaPDDVJHYaTpyX5VoOd64ZoNiOFXG0YksdRJvyry5PhlE; __gads=ID=306d05edeb2a339c-2220c59567da0048:T=1672053044:RT=1672053044:S=ALNI_MYf2mbZrNXUr1s_1XocDbtkCsiWQQ; __gpi=UID=00000b985a90fa53:T=1672053044:RT=1672418759:S=ALNI_Ma_3z4ULojP1nD_ajM6bUS-FgCBnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{automationUrl}}/productsList",
+					"host": [
+						"{{automationUrl}}"
+					],
+					"path": [
+						"productsList"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

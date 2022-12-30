@@ -261,6 +261,215 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "generateToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "51f0f80a-35c5-4110-99ff-918661ae0ce9",
+						"exec": [
+							"let response = pm.response.json();\r",
+							"console.log(response.token);\r",
+							"pm.environment.set(\"token\",response.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "2f79dcd6-1d7c-4ccc-8b93-8b1906940591",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email\": \"cihadatinctest2@gmail.com\",\r\n\"password\":\"test1234@GGG\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUsersWith q parameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8bbf8963-72ab-4531-b3e8-beb3bae9aff0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let response = pm .response.json();\r",
+							"console.log(response.content[0].id);\r",
+							"pm.environment.set(\"userId\",response.content[0].id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b9a82ee8-18d1-44b8-aac0-b49893b7bbee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users?q=cihad",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "cihad"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "direction",
+							"value": "ASC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userUpdate",
+			"id": "44eda416-bdf8-48b4-b7cc-14c66780ee2f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{           \"firstName\": \"Cihad\",\r\n            \"lastName\": \"Atınç\",\r\n            \"score\": 0,\r\n            \"address\": \"address address\",\r\n            \"phone\": \"555-555-5555\",\r\n            \"birthDate\": \"1988-01-01\",\r\n            \"email\": \"cihadatinctest2@gmail.com\",\r\n            \"createDate\": \"2022-12-14T18:12:51.592\",\r\n            \"builtIn\": false,\r\n            \"roles\": [\r\n                {\r\n                    \"id\": 23,\r\n                    \"name\":\"ROLE_ADMIN\"\r\n                }\r\n            ]\r\n        }\r\n        ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/{{userId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/user/{{userId}}",
+			"id": "791ed503-448f-442b-8414-433d55b7a373",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"firstName\": \"Cihad\",\r\n            \"lastName\": \"Atınç\",\r\n            \"score\": 1,\r\n            \"address\": \"Adress adress\",\r\n            \"phone\": \"555-555-5555\",\r\n            \"birthDate\": \"1988-01-01\",\r\n            \"email\": \"cihadatinctest2@gmail.com\",\r\n            \"createDate\": \"2022-12-14T18:12:51.592\",\r\n             \"builtIn\": false,\r\n         \"roles\": [\r\n      {\r\n          \"id\":3,\r\n      \"name\": \"ROLE_ADMIN\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://library-app-backend-v2.herokuapp.com/users/126",
+					"protocol": "https",
+					"host": [
+						"library-app-backend-v2",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"126"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
