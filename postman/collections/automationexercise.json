@@ -224,7 +224,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{automationUrl}}/searchProduct?search_product=top&search_product=tshirt&search_product=jean",
+					"raw": "{{automationUrl}}/searchProduct?search_product=top",
 					"host": [
 						"{{automationUrl}}"
 					],
@@ -235,16 +235,6 @@
 						{
 							"key": "search_product",
 							"value": "top"
-						},
-						{
-							"key": "search_product",
-							"value": "tshirt",
-							"type": "text"
-						},
-						{
-							"key": "search_product",
-							"value": "jean",
-							"type": "text"
 						}
 					]
 				}
