@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "10b5b416-7504-4183-891d-7d94eb5dab3d",
-		"name": "automationExercise",
+		"name": "automationexercise",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_uid": "24041749-10b5b416-7504-4183-891d-7d94eb5dab3d"
 	},
@@ -41,6 +41,46 @@
 					]
 				},
 				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{automationUrl}}/productsList",
+					"host": [
+						"{{automationUrl}}"
+					],
+					"path": [
+						"productsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postToAllProductsList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6a3062af-4769-4421-8e23-03d0cd328c4b",
+						"exec": [
+							"// Status code is 405 ?\r",
+							"pm.test(\"Status code is 405\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});\r",
+							"// Response body contains 'This request method is not supported.' ?\r",
+							"pm.test(\"Body matches 'This request method is not supported.'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"This request method is not supported.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "707417cf-873f-453e-8f40-93780bee072d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
 				"header": [],
 				"url": {
 					"raw": "{{automationUrl}}/productsList",
