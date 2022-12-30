@@ -176,6 +176,80 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "postToSearchProduct",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9370cf4d-4261-4d8e-9b3a-c1b01d08015b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"value test\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.value).to.eql(\"Searched products list\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "d571e57f-db46-40f5-a843-d13ccdd30b25",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "first",
+						"value": "top",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "second",
+						"value": "tshirt",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "third",
+						"value": "jean",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{automationUrl}}/searchProduct?search_product=top&search_product=tshirt&search_product=jean",
+					"host": [
+						"{{automationUrl}}"
+					],
+					"path": [
+						"searchProduct"
+					],
+					"query": [
+						{
+							"key": "search_product",
+							"value": "top"
+						},
+						{
+							"key": "search_product",
+							"value": "tshirt",
+							"type": "text"
+						},
+						{
+							"key": "search_product",
+							"value": "jean",
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
