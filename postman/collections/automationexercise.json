@@ -128,6 +128,54 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "putToAllBrandsList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e650251d-42dd-4685-9804-4a7d111f34f0",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});\r",
+							"\r",
+							"let expectedResponseMessage = \"This request method is not supported.\";\r",
+							"let actualResponseMessage = pm.response.text();\r",
+							"\r",
+							"console.log(actualResponseMessage.valueOf());\r",
+							"\r",
+							"pm.test(\"response message test\",function(){\r",
+							"if( actualResponseMessage.valueOf().match(expectedResponseMessage)){\r",
+							"    console.log(\"PASS\");\r",
+							" }else{\r",
+							"    console.log(\"FAIL\");\r",
+							" }\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "379d995a-acff-4cd0-af8b-3a606295def1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{automationUrl}}/brandsList",
+					"host": [
+						"{{automationUrl}}"
+					],
+					"path": [
+						"brandsList"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
