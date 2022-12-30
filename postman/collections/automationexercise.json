@@ -250,6 +250,21 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "postToSearchProductWithoutSearchProductParameter",
+			"id": "b6b20c72-73d6-4b31-898f-19b5c6f9593a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
 		}
 	]
 }
