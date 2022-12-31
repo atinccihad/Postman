@@ -47,7 +47,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"password\": \"Batch81+\",\r\n  \"rememberMe\": true,\r\n  \"username\": \"Team88Admin\"\r\n}",
+							"raw": "{\r\n  \"password\": \"{{password}}\",\r\n  \"rememberMe\": {{rememberMe}},\r\n  \"username\": \"{{username}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -55,9 +55,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{medunnaBaseUrl}}/authenticate",
+							"raw": "{{baseUrl}}/authenticate",
 							"host": [
-								"{{medunnaBaseUrl}}"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"authenticate"
@@ -75,7 +75,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtODhhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOIiwiZXhwIjoxNjc1MDkwMTM3fQ.4FV54BJE7319RPOFa7rDlefjSDKQmobvXsV6ZVyJEChQuS4Fv-D_bLNveMoLVwvZsCNhZCtw1S46XHcGuA3oQw",
+				"value": "{{token}}",
 				"type": "string"
 			}
 		]
@@ -84,7 +84,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "398b6605-5d48-4360-aaa7-b29fa879f56c",
+				"id": "c1d7fc8c-c8a0-444e-9c87-42afba7f3f8b",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -94,7 +94,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "107cd3b4-77cd-444c-84da-0defd23077d8",
+				"id": "39bc353e-4535-42ca-b044-56ccc888ec73",
 				"type": "text/javascript",
 				"exec": [
 					""
