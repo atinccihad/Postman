@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "97554845-cfae-42ac-aa96-2f7792775648",
+		"name": "com.medunna",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-97554845-cfae-42ac-aa96-2f7792775648"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "getAccount",
+					"id": "b663ee54-c189-4181-b529-2217425283bc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{medunnaBaseUrl}}/account",
+							"host": [
+								"{{medunnaBaseUrl}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "ca6e513c-e13b-4150-b4d4-cd1974b47732"
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "generateToken",
+					"id": "2bde4a5a-8a53-4def-b297-6efdfb52ad79",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"Batch81+\",\r\n  \"rememberMe\": true,\r\n  \"username\": \"Team88Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{medunnaBaseUrl}}/authenticate",
+							"host": [
+								"{{medunnaBaseUrl}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "e28b1fce-c762-49a3-9dc2-0f39f5485654"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZWFtODhhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOIiwiZXhwIjoxNjc1MDkwMTM3fQ.4FV54BJE7319RPOFa7rDlefjSDKQmobvXsV6ZVyJEChQuS4Fv-D_bLNveMoLVwvZsCNhZCtw1S46XHcGuA3oQw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "398b6605-5d48-4360-aaa7-b29fa879f56c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "107cd3b4-77cd-444c-84da-0defd23077d8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
