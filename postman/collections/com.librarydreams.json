@@ -7,469 +7,393 @@
 	},
 	"item": [
 		{
-			"name": "testPractice",
-			"event": [
+			"name": "post",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "07d761f9-e0ee-44b5-9282-b927350542db",
-						"exec": [
-							"// positive\r",
-							"pm.test(\"Valid Status code test\",function(){\r",
-							"pm.response.to.have.status(200);\r",
-							"});\r",
-							"// negative\r",
-							"pm.test(\"Invalid Status code test\",function(){\r",
-							"pm.response.to.have.status(404);\r",
-							"});\r",
-							"\r",
-							"\r",
-							"// if statement\r",
-							"pm.test(\"statusCode if statement\",function(){\r",
-							"    if(responseBody.status===200){\r",
-							"        console.log(\"PASS\");\r",
-							"    }else{\r",
-							"        console.log(\"FAIL\");\r",
-							"    }\r",
-							"});\r",
-							"\r",
-							"// Testlerimiz, yanıt veri formatına uyarladığınız sözdizimini kullanarak istek yanıtlarının geçerliliğini sağlayabilir.\r",
-							"pm.test(\"response must be valid and have a body\", function () {\r",
-							"     pm.response.to.be.ok;\r",
-							"     pm.response.to.be.withBody;\r",
-							"     pm.response.to.be.json;\r",
-							"});\r",
-							"\r",
-							"// statusCode assert method\r",
-							"tests['Request resulted in 200 OK'] = responseCode.code === 200;\r",
-							"\r",
-							"// Content-Type is present(sunuldu mu?)\r",
-							"pm.test(\"Content-Type is present\",function(){\r",
-							"    pm.response.to.have.header(\"Content-Type\"); \r",
-							"});\r",
-							"\r",
-							"// Response time is less than 200ms ?\r",
-							"pm.test(\"Response time is less than 200ms\",function(){\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
+					"name": "generateToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cfb8a035-cf68-4bb7-9fe8-58295ea0c04d",
+								"exec": [
+									"let response = pm.response.json();\r",
+									"console.log(response.token);\r",
+									"pm.environment.set(\"token\",response.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f0b7e1be-eb9e-4593-ac6b-5f45e270be29",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"cihadatinctest@gmail.com\",\r\n  \"password\": \"Test1234@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login?email=cihadatinctest@gmail.com&password=Test1234@",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "cihadatinctest@gmail.com"
+								},
+								{
+									"key": "password",
+									"value": "Test1234@"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPublisher",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "be3063e3-8938-4766-a0e1-ee8e5fa5cb88",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    console.log(\"status code is 201 PASS\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "a6037784-a441-4f74-83af-91b58e90b047",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 900,\r\n  \"name\": \"team1\",\r\n  \"builtIn\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/publishers?name=HarperCollins&builtIn=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"publishers"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "384",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "HarperCollins"
+								},
+								{
+									"key": "builtIn",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"id": "2a3e823a-b7cd-445d-bf74-c1c377300da4",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
+			"id": "0f23474d-1526-4228-b7b1-254157596e27",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMyIsImlhdCI6MTY3MjYwMTA2MiwiZXhwIjoxNjcyNjg3NDYyfQ.SIvauWgcAcVNYp_Lo_7jA5w_9WRfoBctYqUiYt3u4uuVSxdOCnZa0-LOpajda6OHyEkNJPRcjuuF-Qj0XzpBRw",
+						"type": "string"
+					}
+				]
 			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://library-app-backend-v2.herokuapp.com/publishers/2",
-					"protocol": "https",
-					"host": [
-						"library-app-backend-v2",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"publishers",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "https://library-app-backend-v2.herokuapp.com/publishers/32",
-			"id": "e0fb67b6-0a81-4c46-804f-92e688d2d890",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/publishers/32",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"publishers",
-						"32"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "publishers_tc01",
 			"event": [
 				{
-					"listen": "test",
+					"listen": "prerequest",
 					"script": {
-						"id": "bf557f58-b714-43ae-8e88-d2f84ad86962",
+						"id": "f4d5f26b-14a8-4ccb-8e38-a1208dd0d73d",
+						"type": "text/javascript",
 						"exec": [
-							"// statusCode test\r",
-							"pm.test(\"Status code test PASS\",function(){\r",
-							"  pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"// if statement\r",
-							"pm.test(\"statusCode if statement PASS\",function(){\r",
-							"    if(responseBody.status===200){\r",
-							"        console.log(\"PASS\");\r",
-							"    }else{\r",
-							"        console.log(\"FAIL\");\r",
-							"    };\r",
-							"});\r",
-							"\r",
-							"// Testlerimiz, yanıt veri formatına uyarladığınız sözdizimini kullanarak istek yanıtlarının geçerliliğini sağlayabilir.\r",
-							"pm.test(\"response must be valid and have a body PASS\", function () {\r",
-							"     pm.response.to.be.ok;\r",
-							"     pm.response.to.be.withBody;\r",
-							"     pm.response.to.be.json;\r",
-							"});\r",
-							"\r",
-							"// statusCode assert method\r",
-							"tests['Request resulted in 200 OK, PASS'] = responseCode.code === 200;\r",
-							"\r",
-							"// Content-Type is present(sunuldu mu?)\r",
-							"pm.test(\"Content-Type is present\",function(){\r",
-							"    pm.response.to.have.header(\"Content-Type\"); \r",
-							"    if(responseBody.status===200){\r",
-							"        console.log(\"PASS\");\r",
-							"    }else{\r",
-							"        console.log(\"FAIL\");\r",
-							"    }; \r",
-							"});\r",
-							"\r",
-							"// Response time is less than 200ms ?\r",
-							"pm.test(\"Response time is less than 200ms\",function(){\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
-							"});\r",
-							"\r",
-							"\r",
 							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"id": "6e2b62d5-33c9-4b53-ae92-5024192e56f2",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/publishers?page=15&size=10&sort=name&type=asc",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"publishers"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "15"
-						},
-						{
-							"key": "size",
-							"value": "10"
-						},
-						{
-							"key": "sort",
-							"value": "name"
-						},
-						{
-							"key": "type",
-							"value": "asc"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "{{baseUrl}}/publishers/32?name=abakü",
-			"id": "1558ea79-c717-4e5e-8f6b-e39bcd10fe81",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/publishers/32?\"name\"=\"abakü\"",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"publishers",
-						"32"
-					],
-					"query": [
-						{
-							"key": "\"name\"",
-							"value": "\"abakü\""
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "publishers_post",
-			"id": "a72d7565-d96e-4e48-8d46-99aa57e5c7c4",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true,
-				"disabledSystemHeaders": {}
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjYiLCJpYXQiOjE2NzIyNTI0NDAsImV4cCI6MTY3MjMzODg0MH0.H9tUE5ewBaDwbmFiGgYHd1ik9XPsLTNG-yCRBoL6CU_EKZPdphgDK99BOGGwQh6hU-eD6NCPku6g3TV4QBfY3g",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"HarperCollins\",\r\n  \"builtIn\": true\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
+						]
 					}
 				},
-				"url": {
-					"raw": "{{baseUrl}}/publishers",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"publishers"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "generateToken",
-			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "51f0f80a-35c5-4110-99ff-918661ae0ce9",
+						"id": "5e7694b4-6729-4386-9512-815f90b61756",
+						"type": "text/javascript",
 						"exec": [
-							"let response = pm.response.json();\r",
-							"console.log(response.token);\r",
-							"pm.environment.set(\"token\",response.token);"
-						],
-						"type": "text/javascript"
+							""
+						]
 					}
 				}
-			],
-			"id": "2f79dcd6-1d7c-4ccc-8b93-8b1906940591",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\"email\": \"cihadatinctest2@gmail.com\",\r\n\"password\":\"test1234@GGG\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/login",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"login"
-					]
-				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "getUsersWith q parameter",
-			"event": [
+			"name": "get",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "8bbf8963-72ab-4531-b3e8-beb3bae9aff0",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"let response = pm .response.json();\r",
-							"console.log(response.content[0].id);\r",
-							"pm.environment.set(\"userId\",response.content[0].id);"
-						],
-						"type": "text/javascript"
-					}
+					"name": "getPublishersWithQparameter",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9d8f0ff2-a0d7-4bee-b2ec-789597c56b16",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    console.log(\"statusCode is 200 PASS\")\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4a76dd2e-2e0b-4f25-a5f0-25fb8bcf802d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/publishers/785",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"publishers",
+								"785"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "test",
+					"id": "cc16898b-af2c-458d-8af3-34316086610f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://library-app-backend-v2.herokuapp.com/publishers?page=&size=&sort=&type=",
+							"protocol": "https",
+							"host": [
+								"library-app-backend-v2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"publishers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": ""
+								},
+								{
+									"key": "size",
+									"value": ""
+								},
+								{
+									"key": "sort",
+									"value": ""
+								},
+								{
+									"key": "type",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://library-app-backend-v2.herokuapp.com/publishers",
+					"id": "412737a8-efae-4d1b-82e9-ed85ed442dbd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://library-app-backend-v2.herokuapp.com/publishers",
+							"protocol": "https",
+							"host": [
+								"library-app-backend-v2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"publishers"
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"id": "b9a82ee8-18d1-44b8-aac0-b49893b7bbee",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/users?q=cihad",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users"
-					],
-					"query": [
-						{
-							"key": "q",
-							"value": "cihad"
-						},
-						{
-							"key": "page",
-							"value": "1",
-							"disabled": true
-						},
-						{
-							"key": "size",
-							"value": "2",
-							"disabled": true
-						},
-						{
-							"key": "direction",
-							"value": "ASC",
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
+			"id": "78733839-4592-4fd9-a68f-d8ed6d65f502"
 		},
 		{
-			"name": "userUpdate",
-			"id": "44eda416-bdf8-48b4-b7cc-14c66780ee2f",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
+			"name": "deletePublisher",
+			"item": [
+				{
+					"name": "deletePublisherWithQparameter",
+					"id": "b9dfc330-1310-4724-82ed-6d44da8edef1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 785,\r\n  \"name\": \"team\",\r\n  \"builtIn\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/publishers/785",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"publishers",
+								"785"
+							]
 						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{           \"firstName\": \"Cihad\",\r\n            \"lastName\": \"Atınç\",\r\n            \"score\": 0,\r\n            \"address\": \"address address\",\r\n            \"phone\": \"555-555-5555\",\r\n            \"birthDate\": \"1988-01-01\",\r\n            \"email\": \"cihadatinctest2@gmail.com\",\r\n            \"createDate\": \"2022-12-14T18:12:51.592\",\r\n            \"builtIn\": false,\r\n            \"roles\": [\r\n                {\r\n                    \"id\": 23,\r\n                    \"name\":\"ROLE_ADMIN\"\r\n                }\r\n            ]\r\n        }\r\n        ",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{baseUrl}}/users/{{userId}}",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"users",
-						"{{userId}}"
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"id": "a9b30d26-f2b6-4a35-9b5f-717c94a50cd5"
 		},
 		{
-			"name": "{{baseUrl}}/user/{{userId}}",
-			"id": "791ed503-448f-442b-8414-433d55b7a373",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
+			"name": "put",
+			"item": [
+				{
+					"name": "putPublishersWithQparameter",
+					"event": [
 						{
-							"key": "token",
-							"value": "{{token}}",
-							"type": "string"
+							"listen": "test",
+							"script": {
+								"id": "927896d4-979a-49ac-ab5f-4879bb3369f1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    console.log(\"PASS\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
 						}
-					]
-				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n            \"firstName\": \"Cihad\",\r\n            \"lastName\": \"Atınç\",\r\n            \"score\": 1,\r\n            \"address\": \"Adress adress\",\r\n            \"phone\": \"555-555-5555\",\r\n            \"birthDate\": \"1988-01-01\",\r\n            \"email\": \"cihadatinctest2@gmail.com\",\r\n            \"createDate\": \"2022-12-14T18:12:51.592\",\r\n             \"builtIn\": false,\r\n         \"roles\": [\r\n      {\r\n          \"id\":3,\r\n      \"name\": \"ROLE_ADMIN\"\r\n    }\r\n  ]\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://library-app-backend-v2.herokuapp.com/users/126",
-					"protocol": "https",
-					"host": [
-						"library-app-backend-v2",
-						"herokuapp",
-						"com"
 					],
-					"path": [
-						"users",
-						"126"
-					]
+					"id": "992ffeb6-8d19-4469-85ec-96bcd2cc9482",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 785,\r\n    \"name\": \"team1\",\r\n    \"builtIn\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/publishers/785",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"publishers",
+								"785"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "784",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"id": "fc6db473-b8ea-48ab-a726-a271f5b55f80"
 		}
 	]
 }

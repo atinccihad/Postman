@@ -19,9 +19,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{medunnaBaseUrl}}/account",
+							"raw": "{{baseUrl}}/account",
 							"host": [
-								"{{medunnaBaseUrl}}"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"account"
