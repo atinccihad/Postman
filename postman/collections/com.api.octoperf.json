@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "f9f68cbc-eaff-41b7-997f-7f2ec0a7c5a4",
+		"name": "com.api.octoperf",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-f9f68cbc-eaff-41b7-997f-7f2ec0a7c5a4"
+	},
+	"item": [
+		{
+			"name": "loginapi.octoperf",
+			"id": "c77d0473-2057-49f1-b5e9-d35e30c89cd8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/public/users/login?username=cihadatinctest@gmail.com&password=Test1234@&token=$.token&id=UA-68231741-1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"public",
+						"users",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "cihadatinctest@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "Test1234@"
+						},
+						{
+							"key": "token",
+							"value": "$.token"
+						},
+						{
+							"key": "id",
+							"value": "UA-68231741-1",
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "welcome",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fecf2bd2-1693-4b5a-9289-46dfae5f3ff0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    console.log(\"Welcome to octoperf..\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "82a2114d-1a80-4705-bd86-db78ae957a30",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/app/#/app/workspace/H477q4UB83ienr7bmtrK/projects",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"app",
+						""
+					],
+					"hash": "/app/workspace/H477q4UB83ienr7bmtrK/projects"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "workspaces/Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5c24d4e0-8474-4e73-849b-445a6ca509da",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches Loading, please wait ...\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Loading, please wait ...\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "91a5a612-b5b5-4297-8bb7-fa9a1ed1847a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/app/#/app/workspacesAdmin",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"app",
+						""
+					],
+					"hash": "/app/workspacesAdmin"
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0b9e7724-941a-411c-9f6a-f202960ec80c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "47b7f4f4-21c7-415c-8acd-22b060100d92",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
