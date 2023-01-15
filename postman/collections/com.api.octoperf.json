@@ -1,111 +1,65 @@
 {
 	"info": {
-		"_postman_id": "f9f68cbc-eaff-41b7-997f-7f2ec0a7c5a4",
+		"_postman_id": "21ed4625-1666-4750-92b0-361149bc4cf4",
 		"name": "com.api.octoperf",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "24041749-f9f68cbc-eaff-41b7-997f-7f2ec0a7c5a4"
+		"_uid": "24041749-21ed4625-1666-4750-92b0-361149bc4cf4"
 	},
 	"item": [
 		{
-			"name": "loginapi.octoperf",
-			"id": "c77d0473-2057-49f1-b5e9-d35e30c89cd8",
+			"name": "workspaces/{id}",
+			"id": "bc22d457-7191-4c26-a420-85c4d6cc8835",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/public/users/login?username=cihadatinctest@gmail.com&password=Test1234@&token=$.token&id=UA-68231741-1",
+					"raw": "{{baseUrl}}/workspaces/leTTrIUB_iwT4FEntlnM",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"public",
-						"users",
-						"login"
-					],
-					"query": [
-						{
-							"key": "username",
-							"value": "cihadatinctest@gmail.com"
-						},
-						{
-							"key": "password",
-							"value": "Test1234@"
-						},
-						{
-							"key": "token",
-							"value": "$.token"
-						},
-						{
-							"key": "id",
-							"value": "UA-68231741-1",
-							"type": "text"
-						}
+						"workspaces",
+						"leTTrIUB_iwT4FEntlnM"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "welcome",
+			"name": "workspaces/member-of",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "fecf2bd2-1693-4b5a-9289-46dfae5f3ff0",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"    console.log(\"Welcome to octoperf..\")\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"id": "82a2114d-1a80-4705-bd86-db78ae957a30",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/app/#/app/workspace/H477q4UB83ienr7bmtrK/projects",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"app",
-						""
-					],
-					"hash": "/app/workspace/H477q4UB83ienr7bmtrK/projects"
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "workspaces/Admin",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "5c24d4e0-8474-4e73-849b-445a6ca509da",
+						"id": "6b496f5f-1eeb-4bc5-acc1-4c786cf2dcb8",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
-							"pm.test(\"Body matches Loading, please wait ...\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Loading, please wait ...\");\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include([\r",
+							"  {\r",
+							"    \"created\": 1673551069407,\r",
+							"    \"description\": \"firstUpdateTest\",\r",
+							"    \"id\": \"leTTrIUB_iwT4FEntlnM\",\r",
+							"    \"lastModified\": 1673790559671,\r",
+							"    \"name\": \"atinccihad\",\r",
+							"    \"userId\": \"d_vHkoUBWOLVTKMdcY_E\"\r",
+							"  }\r",
+							"]);\r",
+							"});\r",
+							"pm.test(\"Response headers test\", function () {\r",
+							"    pm.response.to.have.header(\"cache-control: no-cache,no-store,max-age=0,must-revalidate\");\r",
 							"});"
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"id": "91a5a612-b5b5-4297-8bb7-fa9a1ed1847a",
+			"id": "39f6ad7b-a87e-43a1-bbc6-db7470768526",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -113,15 +67,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/app/#/app/workspacesAdmin",
+					"raw": "{{baseUrl}}/workspaces/member-of",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"app",
-						""
-					],
-					"hash": "/app/workspacesAdmin"
+						"workspaces",
+						"member-of"
+					]
 				}
 			},
 			"response": []
@@ -132,7 +85,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "{{token}}",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzM4OTQ2NjQsImlhdCI6MTY3MzgwODI2NCwiaGFzaCI6ImM2OGUxNWU0ZjNlMGI1ZmM5MTNjYmI2ZjBjMjQyN2ZiIn0.8pw_r4ZtArTC45pKwE5cutliWLHZ8kxDiwfkL_BmmH4",
 				"type": "string"
 			}
 		]
@@ -141,7 +94,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0b9e7724-941a-411c-9f6a-f202960ec80c",
+				"id": "24ba11ee-c139-40f6-820c-5ff538e6aa62",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -151,12 +104,26 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "47b7f4f4-21c7-415c-8acd-22b060100d92",
+				"id": "ea5bd8f4-174c-4d8d-8f7b-d5e4e54b6ffe",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"id": "08b64362-3438-4b7f-80c1-b8bc6f228357",
+			"key": "baseUrl",
+			"value": "https://api.octoperf.com",
+			"type": "string"
+		},
+		{
+			"id": "6a2b0fab-364e-477e-b017-77226661541a",
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzM4OTQ2NjQsImlhdCI6MTY3MzgwODI2NCwiaGFzaCI6ImM2OGUxNWU0ZjNlMGI1ZmM5MTNjYmI2ZjBjMjQyN2ZiIn0.8pw_r4ZtArTC45pKwE5cutliWLHZ8kxDiwfkL_BmmH4",
+			"type": "string"
 		}
 	]
 }
