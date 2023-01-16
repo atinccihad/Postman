@@ -822,6 +822,76 @@
 						}
 					],
 					"id": "1812e0b3-188a-493c-a440-c5d59819da84"
+				},
+				{
+					"name": "publisher-controller",
+					"item": [
+						{
+							"name": "publishers/{id}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "ccbc95ee-0fe3-4827-ac76-96f41f3a8236",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Body matches putTest\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"putTest\");\r",
+											"});\r",
+											"pm.test(\"Body matches 32\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(32);\r",
+											"});\r",
+											"pm.test(\"Body matches true\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(true);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "823bf6c2-2c81-44be-8906-ec50d6819854",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 32,\r\n  \"name\": \"putTest\",\r\n  \"builtIn\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/publishers/32",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"publishers",
+										"32"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "3d733305-a9f2-46b1-8426-353bcf69dcd8"
 				}
 			],
 			"id": "fc6db473-b8ea-48ab-a726-a271f5b55f80"
