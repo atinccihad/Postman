@@ -22,6 +22,13 @@
 										"exec": [
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"pm.test(\"Body is correct\", function () {\r",
+											"    pm.response.to.have.body({\r",
+											"    \"id\": 1125,\r",
+											"    \"name\": \"string\",\r",
+											"    \"builtIn\": false\r",
+											"});\r",
 											"});"
 										],
 										"type": "text/javascript"
@@ -68,70 +75,6 @@
 						}
 					],
 					"id": "93a7321b-af54-4e65-b265-1f8b7707ef38"
-				},
-				{
-					"name": "generateToken",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "cfb8a035-cf68-4bb7-9fe8-58295ea0c04d",
-								"exec": [
-									"let response = pm.response.json();\r",
-									"console.log(response.token);\r",
-									"pm.environment.set(\"token\",response.token);"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "f0b7e1be-eb9e-4593-ac6b-5f45e270be29",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/login?email={{email}}&password={{password}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"login"
-							],
-							"query": [
-								{
-									"key": "email",
-									"value": "{{email}}"
-								},
-								{
-									"key": "password",
-									"value": "{{password}}"
-								}
-							]
-						}
-					},
-					"response": []
 				},
 				{
 					"name": "createPublisher",
@@ -197,6 +140,70 @@
 								{
 									"key": "builtIn",
 									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "generateToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cfb8a035-cf68-4bb7-9fe8-58295ea0c04d",
+								"exec": [
+									"let response = pm.response.json();\r",
+									"console.log(response.token);\r",
+									"pm.environment.set(\"token\",response.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f0b7e1be-eb9e-4593-ac6b-5f45e270be29",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login?email={{email}}&password={{password}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email}}"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}"
 								}
 							]
 						}
