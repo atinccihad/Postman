@@ -182,433 +182,488 @@
 			"name": "get",
 			"item": [
 				{
-					"name": "users/{id}",
-					"event": [
+					"name": "user-controller",
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "a33ba438-609c-4dec-ab87-045cadc72161",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Body matches team01\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"team01\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
+							"name": "users/{id}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a33ba438-609c-4dec-ab87-045cadc72161",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Body matches team01\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"team01\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "92327101-98f0-4db6-9522-89d56055fa60",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/{{id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"{{id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "users.0",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "0e070381-ca1c-4468-a93e-318d00cf275d",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "a6666792-c91c-483d-9173-1f21dc46c47a",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "f2c1d700-cd56-4aeb-8147-1f48c7dcee28",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "direction",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "users.1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3a5c943c-c3f5-47a3-a72b-706ca24e6b5c",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Body matches cihad\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"cihad\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "0398d0f8-6580-4a20-895a-edf2ef9529c3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users?q=cihad",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "cihad"
+										},
+										{
+											"key": "page",
+											"value": null,
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": null,
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": null,
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "direction",
+											"value": null,
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "users.2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2d189588-9e33-4b39-bf57-6ccacd2bc467",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Body matches 2\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(2);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "99d4ded3-c1ef-4dbb-8aa1-97940d4bc8e7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users?page=2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "2"
+										},
+										{
+											"key": "size",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "direction",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "users.3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2d189588-9e33-4b39-bf57-6ccacd2bc467",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "930c69aa-f4fe-4bfe-8f7d-1a62906fae66",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users?direction=ASC",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "direction",
+											"value": "ASC"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "users.4",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2d189588-9e33-4b39-bf57-6ccacd2bc467",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "ae529296-e4aa-47aa-9824-e186c6797f23",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users?direction=DESC",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "direction",
+											"value": "DESC"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					],
-					"id": "92327101-98f0-4db6-9522-89d56055fa60",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/users/{{id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"users",
-								"{{id}}"
-							]
-						}
-					},
-					"response": []
+					"id": "d7eb5f76-73d3-4710-ad45-99c341313f89"
 				},
 				{
-					"name": "users.0",
-					"event": [
+					"name": "publisher-controller",
+					"item": [
 						{
-							"listen": "prerequest",
-							"script": {
-								"id": "0e070381-ca1c-4468-a93e-318d00cf275d",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "a6666792-c91c-483d-9173-1f21dc46c47a",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
+							"name": "publishers/{id}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3b8b6935-9faa-40f8-b11a-9537a5923d28",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Body is correct\", function () {\r",
+											"    pm.response.to.have.body({\r",
+											"  \"id\": 32,\r",
+											"  \"name\": \"test\",\r",
+											"  \"builtIn\": true\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "f817697c-8374-4a41-9f82-0b3e7498a6d1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/publishers/32",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"publishers",
+										"32"
+									]
+								}
+							},
+							"response": []
 						}
 					],
-					"id": "f2c1d700-cd56-4aeb-8147-1f48c7dcee28",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/users",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"users"
-							],
-							"query": [
-								{
-									"key": "q",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "page",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "size",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "sort",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "direction",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "users.1",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "3a5c943c-c3f5-47a3-a72b-706ca24e6b5c",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Body matches cihad\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"cihad\");\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "0398d0f8-6580-4a20-895a-edf2ef9529c3",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/users?q=cihad",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"users"
-							],
-							"query": [
-								{
-									"key": "q",
-									"value": "cihad"
-								},
-								{
-									"key": "page",
-									"value": null,
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "size",
-									"value": null,
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "sort",
-									"value": null,
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "direction",
-									"value": null,
-									"type": "text",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "users.2",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "2d189588-9e33-4b39-bf57-6ccacd2bc467",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Body matches 2\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(2);\r",
-									"});\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "99d4ded3-c1ef-4dbb-8aa1-97940d4bc8e7",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/users?page=2",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"users"
-							],
-							"query": [
-								{
-									"key": "q",
-									"value": "",
-									"disabled": true
-								},
-								{
-									"key": "page",
-									"value": "2"
-								},
-								{
-									"key": "size",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "sort",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "direction",
-									"value": null,
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "users.3",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "2d189588-9e33-4b39-bf57-6ccacd2bc467",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "930c69aa-f4fe-4bfe-8f7d-1a62906fae66",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/users?direction=ASC",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"users"
-							],
-							"query": [
-								{
-									"key": "q",
-									"value": "",
-									"disabled": true
-								},
-								{
-									"key": "page",
-									"value": "",
-									"disabled": true
-								},
-								{
-									"key": "size",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "sort",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "direction",
-									"value": "ASC"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "users.4",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "2d189588-9e33-4b39-bf57-6ccacd2bc467",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "ae529296-e4aa-47aa-9824-e186c6797f23",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/users?direction=DESC",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"users"
-							],
-							"query": [
-								{
-									"key": "q",
-									"value": "",
-									"disabled": true
-								},
-								{
-									"key": "page",
-									"value": "",
-									"disabled": true
-								},
-								{
-									"key": "size",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "sort",
-									"value": null,
-									"disabled": true
-								},
-								{
-									"key": "direction",
-									"value": "DESC"
-								}
-							]
-						}
-					},
-					"response": []
+					"id": "9fbbc73f-1b23-450f-960e-2a7fd13630eb"
 				}
 			],
 			"id": "78733839-4592-4fd9-a68f-d8ed6d65f502"
@@ -654,113 +709,119 @@
 			"name": "put",
 			"item": [
 				{
-					"name": "putPublishersWithQparameter",
-					"event": [
+					"name": "user-controller",
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "927896d4-979a-49ac-ab5f-4879bb3369f1",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"    console.log(\"PASS\");\r",
-									"});\r",
-									""
-								],
-								"type": "text/javascript"
-							}
+							"name": "putPublishersWithQparameter",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "927896d4-979a-49ac-ab5f-4879bb3369f1",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    console.log(\"PASS\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "992ffeb6-8d19-4469-85ec-96bcd2cc9482",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 785,\r\n    \"name\": \"team1\",\r\n    \"builtIn\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/publishers/785",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"publishers",
+										"785"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "784",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b2f7af44-47ea-4573-b079-3be6310ad60a",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "8f96b14a-80bd-44fa-b0b6-bb4383722a52",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"cihad\",\r\n  \"lastName\": \"team01\",\r\n  \"address\": \"address-address\",\r\n  \"phone\": \"555-555-5555\",\r\n  \"birthDate\": \"1988-01-01\",\r\n  \"email\": \"cihadatinctest@gmail.com\",\r\n  \"score\": 0,\r\n  \"password\": \"string\",\r\n  \"builtIn\": true,\r\n  \"roles\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"ROLE_ADMIN\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
 						}
 					],
-					"id": "992ffeb6-8d19-4469-85ec-96bcd2cc9482",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 785,\r\n    \"name\": \"team1\",\r\n    \"builtIn\": true\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/publishers/785",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers",
-								"785"
-							],
-							"query": [
-								{
-									"key": "id",
-									"value": "784",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "user",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "b2f7af44-47ea-4573-b079-3be6310ad60a",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"id": "8f96b14a-80bd-44fa-b0b6-bb4383722a52",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"firstName\": \"cihad\",\r\n  \"lastName\": \"team01\",\r\n  \"address\": \"address-address\",\r\n  \"phone\": \"555-555-5555\",\r\n  \"birthDate\": \"1988-01-01\",\r\n  \"email\": \"cihadatinctest@gmail.com\",\r\n  \"score\": 0,\r\n  \"password\": \"string\",\r\n  \"builtIn\": true,\r\n  \"roles\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"ROLE_ADMIN\"\r\n    }\r\n  ]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/user",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"user"
-							]
-						}
-					},
-					"response": []
+					"id": "1812e0b3-188a-493c-a440-c5d59819da84"
 				}
 			],
 			"id": "fc6db473-b8ea-48ab-a726-a271f5b55f80"
@@ -769,61 +830,99 @@
 			"name": "patch",
 			"item": [
 				{
-					"name": "auth",
+					"name": "user-controller",
+					"item": [
+						{
+							"name": "auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1787614c-e598-4825-bc7d-dad5232580d4",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"Your password has been changed succesfuly\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "d877dc17-b7f0-428f-b03e-67cc56638343",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"newPassword\": \"Test1234@\",\r\n  \"oldPassword\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "e4a67da8-f912-4040-bf0e-e9e1bb40f955",
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "string"
+							}
+						]
+					},
 					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d73e9d8b-bf1b-47fd-9e8a-8e029770b5fb",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
 						{
 							"listen": "test",
 							"script": {
-								"id": "1787614c-e598-4825-bc7d-dad5232580d4",
+								"id": "8f367f5b-7bb6-42be-b236-253c42a02dd0",
+								"type": "text/javascript",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"pm.test(\"Body matches string\", function () {\r",
-									"    pm.expect(pm.response.text()).to.include(\"Your password has been changed succesfuly\");\r",
-									"});"
-								],
-								"type": "text/javascript"
+									""
+								]
 							}
 						}
-					],
-					"id": "d877dc17-b7f0-428f-b03e-67cc56638343",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"newPassword\": \"Test1234@\",\r\n  \"oldPassword\": \"string\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/auth",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"auth"
-							]
-						}
-					},
-					"response": []
+					]
 				}
 			],
 			"id": "cb773bc5-1414-4bbf-9693-5fee261bf400"
