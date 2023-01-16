@@ -10,6 +10,66 @@
 			"name": "post",
 			"item": [
 				{
+					"name": "publisher-controller",
+					"item": [
+						{
+							"name": "publishers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "0d55db23-33ca-447f-a104-20c66ee66613",
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "ec38b037-714f-432e-af5d-9234a6c422dc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"string\",\r\n  \"builtIn\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/publishers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"publishers"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "93a7321b-af54-4e65-b265-1f8b7707ef38"
+				},
+				{
 					"name": "generateToken",
 					"event": [
 						{
