@@ -330,6 +330,20 @@
 				},
 				{
 					"name": "user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b2f7af44-47ea-4573-b079-3be6310ad60a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "8f96b14a-80bd-44fa-b0b6-bb4383722a52",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
