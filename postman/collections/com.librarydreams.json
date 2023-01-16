@@ -327,6 +327,46 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "user",
+					"id": "8f96b14a-80bd-44fa-b0b6-bb4383722a52",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"cihad\",\r\n  \"lastName\": \"team01\",\r\n  \"address\": \"address-address\",\r\n  \"phone\": \"555-555-5555\",\r\n  \"birthDate\": \"1988-01-01\",\r\n  \"email\": \"cihadatinctest@gmail.com\",\r\n  \"score\": 0,\r\n  \"password\": \"string\",\r\n  \"builtIn\": true,\r\n  \"roles\": [\r\n    {\r\n      \"id\": 0,\r\n      \"name\": \"ROLE_ADMIN\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "fc6db473-b8ea-48ab-a726-a271f5b55f80"
