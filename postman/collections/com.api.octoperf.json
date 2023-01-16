@@ -16,13 +16,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/workspaces/leTTrIUB_iwT4FEntlnM",
+					"raw": "{{baseUrl}}/workspaces/{{id}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"workspaces",
-						"leTTrIUB_iwT4FEntlnM"
+						"{{id}}"
 					]
 				}
 			},
@@ -78,6 +78,21 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "workspaces/{id} update an item by id",
+			"id": "026f66ef-f83d-48b4-95f7-82709929a9e9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {
@@ -94,7 +109,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "24ba11ee-c139-40f6-820c-5ff538e6aa62",
+				"id": "a4cb3423-538c-4e5b-b2b0-049fadbd743b",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -104,7 +119,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "ea5bd8f4-174c-4d8d-8f7b-d5e4e54b6ffe",
+				"id": "74b2e676-48ba-4252-888e-fa551f8500d2",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -114,13 +129,13 @@
 	],
 	"variable": [
 		{
-			"id": "08b64362-3438-4b7f-80c1-b8bc6f228357",
+			"id": "a222abf6-60c8-41f9-af10-a1531fa5f4cf",
 			"key": "baseUrl",
 			"value": "https://api.octoperf.com",
 			"type": "string"
 		},
 		{
-			"id": "6a2b0fab-364e-477e-b017-77226661541a",
+			"id": "4a5f19e7-0730-44f1-ab12-9d2df360eb41",
 			"key": "token",
 			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzM4OTQ2NjQsImlhdCI6MTY3MzgwODI2NCwiaGFzaCI6ImM2OGUxNWU0ZjNlMGI1ZmM5MTNjYmI2ZjBjMjQyN2ZiIn0.8pw_r4ZtArTC45pKwE5cutliWLHZ8kxDiwfkL_BmmH4",
 			"type": "string"

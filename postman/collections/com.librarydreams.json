@@ -44,7 +44,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"cihadatinctest@gmail.com\",\r\n  \"password\": \"Test1234@\"\r\n}",
+							"raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -52,7 +52,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/login?email=cihadatinctest@gmail.com&password=Test1234@",
+							"raw": "{{baseUrl}}/login?email={{email}}&password={{password}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -62,11 +62,11 @@
 							"query": [
 								{
 									"key": "email",
-									"value": "cihadatinctest@gmail.com"
+									"value": "{{email}}"
 								},
 								{
 									"key": "password",
-									"value": "Test1234@"
+									"value": "{{password}}"
 								}
 							]
 						}
@@ -182,23 +182,25 @@
 			"name": "get",
 			"item": [
 				{
-					"name": "getPublishersWithQparameter",
+					"name": "users/{id}",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "9d8f0ff2-a0d7-4bee-b2ec-789597c56b16",
+								"id": "a33ba438-609c-4dec-ab87-045cadc72161",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"    console.log(\"statusCode is 200 PASS\")\r",
+									"});\r",
+									"pm.test(\"Body matches team01\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"team01\");\r",
 									"});"
 								],
 								"type": "text/javascript"
 							}
 						}
 					],
-					"id": "4a76dd2e-2e0b-4f25-a5f0-25fb8bcf802d",
+					"id": "92327101-98f0-4db6-9522-89d56055fa60",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -216,79 +218,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/publishers/785",
+							"raw": "{{baseUrl}}/users/{{id}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"publishers",
-								"785"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "test",
-					"id": "cc16898b-af2c-458d-8af3-34316086610f",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://library-app-backend-v2.herokuapp.com/publishers?page=&size=&sort=&type=",
-							"protocol": "https",
-							"host": [
-								"library-app-backend-v2",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"publishers"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": ""
-								},
-								{
-									"key": "size",
-									"value": ""
-								},
-								{
-									"key": "sort",
-									"value": ""
-								},
-								{
-									"key": "type",
-									"value": ""
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "https://library-app-backend-v2.herokuapp.com/publishers",
-					"id": "412737a8-efae-4d1b-82e9-ed85ed442dbd",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://library-app-backend-v2.herokuapp.com/publishers",
-							"protocol": "https",
-							"host": [
-								"library-app-backend-v2",
-								"herokuapp",
-								"com"
-							],
-							"path": [
-								"publishers"
+								"users",
+								"{{id}}"
 							]
 						}
 					},
@@ -394,6 +330,48 @@
 				}
 			],
 			"id": "fc6db473-b8ea-48ab-a726-a271f5b55f80"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "048440eb-58c2-4719-9e11-2729b9263801",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "794c4783-29a6-4e5f-8e55-694e119d4327",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "b1521ca2-561b-44a0-9638-d7b5619ef3fa",
+			"key": "email",
+			"value": "cihadatinctest@gmail.com",
+			"type": "string"
+		},
+		{
+			"id": "e6488c15-5da3-45aa-97b9-05586a9603b6",
+			"key": "password",
+			"value": "Test1234@",
+			"type": "string"
+		},
+		{
+			"id": "eaa453b7-08ea-4359-9bae-03cc86de9f42",
+			"key": "id",
+			"value": "23",
+			"type": "string"
 		}
 	]
 }
