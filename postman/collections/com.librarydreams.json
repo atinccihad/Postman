@@ -181,7 +181,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\"\r\n}",
+							"raw": "{\r\n  \"username\": \"{{email}}\",\r\n  \"password\": \"{{password}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -189,17 +189,19 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/login?email={{email}}&password={{password}}",
+							"raw": "{{baseUrl}}/public/users/login?username={{username}}&password={{password}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
+								"public",
+								"users",
 								"login"
 							],
 							"query": [
 								{
-									"key": "email",
-									"value": "{{email}}"
+									"key": "username",
+									"value": "{{username}}"
 								},
 								{
 									"key": "password",

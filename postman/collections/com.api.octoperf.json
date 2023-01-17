@@ -7,109 +7,199 @@
 	},
 	"item": [
 		{
-			"name": "workspaces/{id}",
-			"id": "bc22d457-7191-4c26-a420-85c4d6cc8835",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/workspaces/{{id}}",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"workspaces",
-						"{{id}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "workspaces/member-of",
-			"event": [
+			"name": "signIn",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "6b496f5f-1eeb-4bc5-acc1-4c786cf2dcb8",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"pm.test(\"Body matches string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include([\r",
-							"  {\r",
-							"    \"created\": 1673551069407,\r",
-							"    \"description\": \"firstUpdateTest\",\r",
-							"    \"id\": \"leTTrIUB_iwT4FEntlnM\",\r",
-							"    \"lastModified\": 1673790559671,\r",
-							"    \"name\": \"atinccihad\",\r",
-							"    \"userId\": \"d_vHkoUBWOLVTKMdcY_E\"\r",
-							"  }\r",
-							"]);\r",
-							"});\r",
-							"pm.test(\"Response headers test\", function () {\r",
-							"    pm.response.to.have.header(\"cache-control: no-cache,no-store,max-age=0,must-revalidate\");\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
+					"name": "generateToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cfb8a035-cf68-4bb7-9fe8-58295ea0c04d",
+								"exec": [
+									"let response = pm.response.json();\r",
+									"console.log(response.token);\r",
+									"pm.environment.set(\"token\",response.token);\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "56ccd323-8130-4d5e-a7b4-676cd965c48d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzQwNDgwMzksImlhdCI6MTY3Mzk2MTYzOSwiaGFzaCI6ImM2OGUxNWU0ZjNlMGI1ZmM5MTNjYmI2ZjBjMjQyN2ZiIn0.86DgjqQ9BpcBms0zpvDXEK2LFrnC_Gy4ZID4fV9u5zo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"{{email}}\",\r\n  \"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/public/users/login?username={{username}}&password={{password}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"public",
+								"users",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"id": "39f6ad7b-a87e-43a1-bbc6-db7470768526",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseUrl}}/workspaces/member-of",
-					"host": [
-						"{{baseUrl}}"
-					],
-					"path": [
-						"workspaces",
-						"member-of"
-					]
-				}
-			},
-			"response": []
+			"id": "5a7748b5-e5af-49c1-aad3-12493703b4cc"
 		},
 		{
-			"name": "workspaces/{id} update an item by id",
-			"id": "026f66ef-f83d-48b4-95f7-82709929a9e9",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": ""
+			"name": "Workspaces",
+			"item": [
+				{
+					"name": "workspaces/{id}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8a46c872-60b3-4f45-8ad9-fa21d365eda1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches atinccihad\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"atinccihad\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "bc22d457-7191-4c26-a420-85c4d6cc8835",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzQwNDgwMzksImlhdCI6MTY3Mzk2MTYzOSwiaGFzaCI6ImM2OGUxNWU0ZjNlMGI1ZmM5MTNjYmI2ZjBjMjQyN2ZiIn0.86DgjqQ9BpcBms0zpvDXEK2LFrnC_Gy4ZID4fV9u5zo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workspaces/{{id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workspaces",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "workspaces/{id} update an item by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "44af8065-f202-459c-bdf6-480ebec539b9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches updateTest2\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"updateTest2\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "026f66ef-f83d-48b4-95f7-82709929a9e9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzQwNDgwMzksImlhdCI6MTY3Mzk2MTYzOSwiaGFzaCI6ImM2OGUxNWU0ZjNlMGI1ZmM5MTNjYmI2ZjBjMjQyN2ZiIn0.86DgjqQ9BpcBms0zpvDXEK2LFrnC_Gy4ZID4fV9u5zo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"created\": 1673551069407,\r\n    \"description\": \"updateTest2\",\r\n    \"id\": \"{{id}}\",\r\n    \"lastModified\": 1673790559671,\r\n    \"name\": \"atinccihad\",\r\n    \"userId\": \"{{userId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/workspaces/{{id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workspaces",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			],
+			"id": "4f30d576-7270-47c8-9cd0-5672e12c6ad5"
 		}
 	],
-	"auth": {
-		"type": "bearer",
-		"bearer": [
-			{
-				"key": "token",
-				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzM4OTQ2NjQsImlhdCI6MTY3MzgwODI2NCwiaGFzaCI6ImM2OGUxNWU0ZjNlMGI1ZmM5MTNjYmI2ZjBjMjQyN2ZiIn0.8pw_r4ZtArTC45pKwE5cutliWLHZ8kxDiwfkL_BmmH4",
-				"type": "string"
-			}
-		]
-	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a4cb3423-538c-4e5b-b2b0-049fadbd743b",
+				"id": "39fee10a-651b-409a-a96d-7c21f498d9c2",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -119,7 +209,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "74b2e676-48ba-4252-888e-fa551f8500d2",
+				"id": "03151f54-9b9e-4c41-a4a6-b5b13b3679f9",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -129,15 +219,27 @@
 	],
 	"variable": [
 		{
-			"id": "a222abf6-60c8-41f9-af10-a1531fa5f4cf",
+			"id": "6cc98f3c-67a3-46c1-86bd-357617eeea66",
 			"key": "baseUrl",
 			"value": "https://api.octoperf.com",
 			"type": "string"
 		},
 		{
-			"id": "4a5f19e7-0730-44f1-ab12-9d2df360eb41",
-			"key": "token",
-			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzM4OTQ2NjQsImlhdCI6MTY3MzgwODI2NCwiaGFzaCI6ImM2OGUxNWU0ZjNlMGI1ZmM5MTNjYmI2ZjBjMjQyN2ZiIn0.8pw_r4ZtArTC45pKwE5cutliWLHZ8kxDiwfkL_BmmH4",
+			"id": "d2dfbc3f-e410-4808-9543-b7c5b927e3c6",
+			"key": "email",
+			"value": "cihadatinctest@gmail.com",
+			"type": "string"
+		},
+		{
+			"id": "3d9da74e-3a7e-4694-bcf1-a3360671bdc8",
+			"key": "password",
+			"value": "Test1234@",
+			"type": "string"
+		},
+		{
+			"id": "c1150ede-80ca-4d94-a444-01dfb7701aeb",
+			"key": "id",
+			"value": "leTTrIUB_iwT4FEntlnM",
 			"type": "string"
 		}
 	]
