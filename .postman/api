@@ -14,7 +14,7 @@ files[] = {"id":"24041749-10b5b416-7504-4183-891d-7d94eb5dab3d","path":"automati
 files[] = {"id":"24041749-21ed4625-1666-4750-92b0-361149bc4cf4","path":"com.api.octoperf.json","metaData":{}}
 files[] = {"id":"24041749-ae189f03-6626-463a-a3f8-385f708f364e","path":"com.librarydreams.json","metaData":{}}
 files[] = {"id":"24041749-97554845-cfae-42ac-aa96-2f7792775648","path":"com.medunna.json","metaData":{}}
-files[] = {"id":"24041749-754063d9-60c5-4633-8c6c-6f0e70bb0dde","path":"Regres.in.json","metaData":{}}
+files[] = {"id":"24041749-754063d9-60c5-4633-8c6c-6f0e70bb0dde","path":"com.regres.in.json","metaData":{}}
 files[] = {"id":"24041749-9bd439cb-cd77-4e0a-9ca1-5b72cbb83267","path":"Swagger Petstore.json","metaData":{}}
 
 [relations.collections.metaData]
