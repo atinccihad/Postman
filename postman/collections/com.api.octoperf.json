@@ -65,7 +65,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/public/users/login?username={{username}}&password={{password}}@",
+							"raw": "{{baseUrl}}/public/users/login?username={{username}}&password={{password}}",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -81,7 +81,7 @@
 								},
 								{
 									"key": "password",
-									"value": "{{password}}@"
+									"value": "{{password}}"
 								}
 							]
 						}
@@ -95,7 +95,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzQwNjg2NzcsImlhdCI6MTY3Mzk4MjI3NywiaGFzaCI6ImM2OGUxNWU0ZjNlMGI1ZmM5MTNjYmI2ZjBjMjQyN2ZiIn0.WmaFG6BmqQ0QlwmgfKdvJW2lx8FTiH0lJH2pMNsO7NI",
+						"value": "{{token}}",
 						"type": "string"
 					}
 				]
@@ -104,7 +104,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "4e8982aa-bc1e-4764-a88a-ff9d12bbbb4d",
+						"id": "9a899810-bf55-4769-bf78-2c65cf6be66e",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -114,7 +114,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b6ca20dc-7985-47ed-9331-d2858255ec36",
+						"id": "e9dd19af-6668-48ca-91eb-9cb0f27f4bd1",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -289,10 +289,35 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"CjciwIUB_iwT4FEnuKzs\",\r\n  \"userId\": \"d_vHkoUBWOLVTKMdcY_E\",\r\n  \"name\": \"Default\",\r\n  \"description\": \"desc\",\r\n  \"created\": \"2023-01-17T17:27:41.115Z\",\r\n  \"lastModified\": \"2023-01-17T17:27:41.115Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "{{baseUrl}}/workspaces",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workspaces"
+							]
 						}
 					},
 					"response": []
@@ -399,6 +424,222 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "users/reset-api-key",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6ccc196b-3d9e-4f51-8b63-78d241040fd3",
+								"exec": [
+									"pm.test(\"Status code is 202 Accepted\", function () {\r",
+									"    pm.response.to.have.status(202);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "6d267ae3-5fe5-4c13-b957-d97c41c7cb1a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/reset-api-key",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"reset-api-key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/change-username",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "94fcdf5b-f787-45db-aa83-2bdf3137bd5f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e27670fc-868f-4786-be17-4ed2437eceed",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/change-username?username={{email}}&password={{password}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"change-username"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{email}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/change-password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "94fcdf5b-f787-45db-aa83-2bdf3137bd5f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "08ed76b0-bf96-4a33-b378-a43c34dc9196",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/change-password?oldpassword=Test1234@@&newpassword=Test1234@",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"change-password"
+							],
+							"query": [
+								{
+									"key": "oldpassword",
+									"value": "Test1234@@"
+								},
+								{
+									"key": "newpassword",
+									"value": "Test1234@"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/refresh-token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dc6d436b-9572-4904-9177-3c6a188db66c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "fd7a9425-7d4f-4384-937c-4c7607bd88e7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzQwNzE4NzYsImlhdCI6MTY3Mzk4NTQ3NiwiaGFzaCI6ImE0NGMzNWRlMDYwMGJiNjdhYTQ0NDA4NDhhY2Y2ODVjIn0.y7bYiOb_LPnxUilc1_E9Xki_55QnhoIjCb0KlGLylDk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/refresh-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "10e0b96b-306a-4040-a98b-d0b9402a7592",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body is correct\", function () {\r",
+									"    pm.response.to.have.body(\"true\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "8670925f-67f3-42b7-a8c2-f5d1485c7432",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "d3657cc4-63e7-4ada-9829-ef047cb7802e",
@@ -440,7 +681,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "479e6936-eed9-439d-9716-488860e405a9",
+				"id": "8072c4b5-4906-4dc2-8e76-be5bf4dd701b",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -450,7 +691,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "9974b217-4dac-455d-bcfe-801cfcbd5720",
+				"id": "b1c43fd3-db91-423f-8709-1d0b784d9761",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -460,45 +701,51 @@
 	],
 	"variable": [
 		{
-			"id": "a10a29b4-f800-4870-9d9a-4a3f471ef7df",
+			"id": "92bb254d-57a4-4213-bf65-93678ab2fcdf",
 			"key": "baseUrl",
 			"value": "https://api.octoperf.com",
 			"type": "string"
 		},
 		{
-			"id": "8210dd88-d606-4e21-83b5-6f1e2e5b1640",
+			"id": "7205c71d-ce24-4e27-bd7d-f7775f10338f",
 			"key": "email",
 			"value": "cihadatinctest@gmail.com",
 			"type": "string"
 		},
 		{
-			"id": "4ad34ce1-2c40-490a-8271-69286986bc50",
+			"id": "289bf2cb-ea20-4d9c-831f-91d740266664",
 			"key": "password",
-			"value": "Test1234@@",
+			"value": "Test1234@",
 			"type": "string"
 		},
 		{
-			"id": "e5cd236f-22cc-46ef-b3d7-44bd95da00cc",
+			"id": "ed91d821-dfe9-4856-9644-3a1c398f2f61",
 			"key": "id",
 			"value": "d_vHkoUBWOLVTKMdcY_E",
 			"type": "string"
 		},
 		{
-			"id": "8e47f346-7703-4832-9d8d-0cf802ea48ea",
+			"id": "9fa61ce2-e015-4629-9131-420de372c9eb",
 			"key": "userId",
 			"value": "d_vHkoUBWOLVTKMdcY_E",
 			"type": "string"
 		},
 		{
-			"id": "3d247e41-f6cb-4e76-8095-7da268f03e83",
+			"id": "8e47443f-bcd4-461c-b6dd-ce543ccfda1e",
 			"key": "name",
 			"value": "Default",
 			"type": "string"
 		},
 		{
-			"id": "e29aac64-c737-40c8-8393-9daf339483e5",
+			"id": "b7be980c-3bb3-4fa8-a2f2-71923cb2b827",
 			"key": "username",
 			"value": "cihadatinctest@gmail.com",
+			"type": "string"
+		},
+		{
+			"id": "ce1f26ea-1d46-414a-8dcc-2c2e628781b9",
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzQxMjA0ODgsImlhdCI6MTY3NDAzNDA4OCwiaGFzaCI6ImE0NGMzNWRlMDYwMGJiNjdhYTQ0NDA4NDhhY2Y2ODVjIn0.t9Hv0qKD1LYelXBtnJVSqAFIMA8mCIwa6waPuMq4fT4",
 			"type": "string"
 		}
 	]
