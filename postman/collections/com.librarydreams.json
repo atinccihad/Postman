@@ -264,7 +264,7 @@
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											"pm.test(\"Body matches team01\", function () {\r",
+											"pm.test(\"Body matches team01 \", function () {\r",
 											"    pm.expect(pm.response.text()).to.include(\"team01\");\r",
 											"});"
 										],
