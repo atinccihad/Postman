@@ -11,6 +11,20 @@
 			"item": [
 				{
 					"name": "getAccount",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bf5b8724-0686-49df-9d48-c83573b71ae3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "b663ee54-c189-4181-b529-2217425283bc",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
