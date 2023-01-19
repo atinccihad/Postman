@@ -49,6 +49,49 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "https://restful-booker.herokuapp.com/booking/5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "371f04f3-15df-4b77-85d9-90f06c8c2218",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches Mark\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Mark\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "3a2447ed-ca2a-478c-bc8c-8a32fe43ad88",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking/5",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking",
+								"5"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "ada3019e-0375-4179-becc-c5583657b895"
