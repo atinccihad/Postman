@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "92254b48-7d9c-4180-a938-373ffa60ce4f",
+		"name": "com.restful-booker.herokuapp.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-92254b48-7d9c-4180-a938-373ffa60ce4f"
+	},
+	"item": [
+		{
+			"name": "get",
+			"item": [
+				{
+					"name": "https://restful-booker.herokuapp.com/booking/3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "67fb3a87-3647-4f53-9781-735c13094506",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "002e81e2-ce4c-4f02-b713-3ce39fc3688d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking/3",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "ada3019e-0375-4179-becc-c5583657b895"
+		}
+	]
+}
