@@ -124,7 +124,7 @@
 			]
 		},
 		{
-			"name": "workspaces",
+			"name": "Workspaces-Notifications",
 			"item": [
 				{
 					"name": "{id}",
@@ -160,12 +160,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/workspaces/{{id}}",
+							"raw": "{{baseUrl}}/workspaces/notifications/{{id}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"workspaces",
+								"notifications",
 								"{{id}}"
 							]
 						}
@@ -283,6 +284,72 @@
 					"response": []
 				},
 				{
+					"name": "workspaces",
+					"id": "eed8bed9-255e-47b8-8be5-048248c2b9fd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"CjciwIUB_iwT4FEnuKzs\",\r\n  \"userId\": \"d_vHkoUBWOLVTKMdcY_E\",\r\n  \"name\": \"Default\",\r\n  \"description\": \"desc\",\r\n  \"created\": \"2023-01-17T17:27:41.115Z\",\r\n  \"lastModified\": \"2023-01-17T17:27:41.115Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/workspaces?id=CjciwIUB_iwT4FEnuKzs&userId=d_vHkoUBWOLVTKMdcY_E&name=Default&description=desc&created=2023-01-17T17:27:41.115Z&lastModified=2023-01-17T17:27:41.115Z",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workspaces"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "CjciwIUB_iwT4FEnuKzs"
+								},
+								{
+									"key": "userId",
+									"value": "d_vHkoUBWOLVTKMdcY_E"
+								},
+								{
+									"key": "name",
+									"value": "Default"
+								},
+								{
+									"key": "description",
+									"value": "desc"
+								},
+								{
+									"key": "created",
+									"value": "2023-01-17T17:27:41.115Z"
+								},
+								{
+									"key": "lastModified",
+									"value": "2023-01-17T17:27:41.115Z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "create a new workspace",
 					"id": "00319dd4-a416-4326-b826-ec0c6f72e48d",
 					"protocolProfileBehavior": {
@@ -321,9 +388,73 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "workspaces/member-of",
+					"id": "2379b2e1-843f-4549-bba8-d6ad4dd65cdb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workspaces/member-of?{{workspaceId}}=40jawIUB_iwT4FEnHijp&{{userId}}=d_vHkoUBWOLVTKMdcY_E",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workspaces",
+								"member-of"
+							],
+							"query": [
+								{
+									"key": "{{workspaceId}}",
+									"value": "40jawIUB_iwT4FEnHijp"
+								},
+								{
+									"key": "{{userId}}",
+									"value": "d_vHkoUBWOLVTKMdcY_E"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"id": "4f30d576-7270-47c8-9cd0-5672e12c6ad5"
+			"id": "4f30d576-7270-47c8-9cd0-5672e12c6ad5",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c1f1f0e6-c397-495e-89bd-da8a1708072c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc004614-44ae-42b5-a286-7be2dc60ff30",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		},
 		{
 			"name": "System-Logged In Users",
@@ -581,7 +712,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzQwNzE4NzYsImlhdCI6MTY3Mzk4NTQ3NiwiaGFzaCI6ImE0NGMzNWRlMDYwMGJiNjdhYTQ0NDA4NDhhY2Y2ODVjIn0.y7bYiOb_LPnxUilc1_E9Xki_55QnhoIjCb0KlGLylDk",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -640,6 +771,95 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "users/current Get currently signed in User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ed594d47-45c6-4fb1-a634-89dd51ea8119",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches cihadatinctest@gmail.com\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"cihadatinctest@gmail.com\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "67843242-46af-46e0-ab07-8aa98055272e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/current",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"current"
+							],
+							"query": [
+								{
+									"key": "apiKey",
+									"value": "4d533a80-a084-4496-a676-bf003f8b07e0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "hashedPassword",
+									"value": "{bcrypt}$2a$10$6cV9RzkTiQI8bBqwZmNo/ewbBEHwA9eSlhyedjCCHklmb9dRSM4wO",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "d_vHkoUBWOLVTKMdcY_E",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "info",
+									"value": "{\n        \"address\": \"TR\",\n        \"company\": \"QA\",\n        \"country\": \"TR\",\n        \"firstname\": \"cihad\",\n        \"lastname\": \"atinc\",\n        \"phone\": \"555-555-5555\",\n        \"vatNumber\": \"88\"\n    }",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "lastLoginTimestamp",
+									"value": "1674122359131",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "roles",
+									"value": "[\n        \"user\"\n    ]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "ENABLED",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "cihadatinctest@gmail.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "d3657cc4-63e7-4ada-9829-ef047cb7802e",
@@ -675,13 +895,275 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Workspaces - Scheduler - Scheduled Jobs",
+			"item": [
+				{
+					"name": "Runtime - Scenarios",
+					"item": [
+						{
+							"name": "runtime/scenarios Create a new item",
+							"id": "c1a2543a-72c0-4ff7-8a7c-e5aad6cdca25",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "runtime/scenarios/{id}",
+							"id": "cebdf6f3-9a47-4de8-b8b3-8ae49d4c463c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "e69079bc-ad59-4a06-b229-2d03bcacf1dc"
+				}
+			],
+			"id": "2596492e-68eb-4aa4-abdb-fb7d0d9c1450"
+		},
+		{
+			"name": "Workspaces-Notifications",
+			"item": [
+				{
+					"name": "workspaces/notifications   Create a new item",
+					"id": "f42386ee-58d1-4512-ab65-80ece3635f0d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"40jawIUB_iwT4FEnHijp\",\r\n  \"userId\": \"d_vHkoUBWOLVTKMdcY_E\",\r\n  \"workspaceId\": \"40jawIUB_iwT4FEnHijp\",\r\n  \"integration\": {},\r\n  \"filters\": [\r\n    {}\r\n  ],\r\n  \"eventIds\": [\r\n    \"DUMMY\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/workspaces/notifications",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workspaces",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "workspaces/notifications/by-workspace/{workspaceId} List notifications by workspace",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "777c9ace-5d84-4878-a79e-a597afadea86",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body is correct\", function () {\r",
+									"    pm.response.to.have.body(\"[]\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "d60fc7d4-f598-4960-8683-b8d47a003f8c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workspaces/notifications/by-workspace/{{workspaceId}}?workspaceId=40jawIUB_iwT4FEnHijp",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workspaces",
+								"notifications",
+								"by-workspace",
+								"{{workspaceId}}"
+							],
+							"query": [
+								{
+									"key": "workspaceId",
+									"value": "40jawIUB_iwT4FEnHijp",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "8b7875a4-8e18-437e-9e17-c9c1ace42898",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "566dc53d-5bb4-4006-95fc-ab56cc7f0b4f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fabb3c8e-1d32-4041-b05a-788aee81984f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "tasks/{{id}}/result Find a task result by ID",
+					"id": "b79ddb5c-6949-4668-aa00-72909b46030c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tasks/{{id}}/result",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks",
+								"{{id}}",
+								"result"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "1be9e478-e58c-4f7b-8045-73601ad30656"
+		},
+		{
+			"name": "Design-Projects-Files",
+			"item": [
+				{
+					"name": "design/project-files/files/{{id}} List files from a given folder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9795c4bf-0021-4582-98b3-e377c6098e82",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "7c68947e-6f65-477b-9178-0a0e7e2b22aa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/design/project-files/files/{{id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"design",
+								"project-files",
+								"files",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "d4f94f6f-a408-4d5a-9e16-af22f0ac2a47"
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8072c4b5-4906-4dc2-8e76-be5bf4dd701b",
+				"id": "b7dee097-1df0-46ff-8083-00f9e7a67a9e",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -691,7 +1173,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b1c43fd3-db91-423f-8709-1d0b784d9761",
+				"id": "440cfe7d-5a15-429d-954c-b1f74714761a",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -701,51 +1183,51 @@
 	],
 	"variable": [
 		{
-			"id": "92bb254d-57a4-4213-bf65-93678ab2fcdf",
+			"id": "3fdb2522-c464-4d42-b3e7-1758a9a23047",
 			"key": "baseUrl",
 			"value": "https://api.octoperf.com",
 			"type": "string"
 		},
 		{
-			"id": "7205c71d-ce24-4e27-bd7d-f7775f10338f",
+			"id": "24286b73-6e1f-4efb-ae61-1bd9125134e7",
 			"key": "email",
 			"value": "cihadatinctest@gmail.com",
 			"type": "string"
 		},
 		{
-			"id": "289bf2cb-ea20-4d9c-831f-91d740266664",
+			"id": "f8823ce1-948f-42e0-893c-443a71ec8fbd",
 			"key": "password",
 			"value": "Test1234@",
 			"type": "string"
 		},
 		{
-			"id": "ed91d821-dfe9-4856-9644-3a1c398f2f61",
+			"id": "b4dcf80d-76fd-42b0-96f8-d50300013eaa",
 			"key": "id",
-			"value": "d_vHkoUBWOLVTKMdcY_E",
+			"value": "{{id}}",
 			"type": "string"
 		},
 		{
-			"id": "9fa61ce2-e015-4629-9131-420de372c9eb",
+			"id": "f49f77e3-1969-4b31-bf2c-61652a672b57",
 			"key": "userId",
-			"value": "d_vHkoUBWOLVTKMdcY_E",
+			"value": "{{userId}}",
 			"type": "string"
 		},
 		{
-			"id": "8e47443f-bcd4-461c-b6dd-ce543ccfda1e",
+			"id": "1814799c-b1ea-44ae-ad3e-0d0c4b491f1d",
 			"key": "name",
-			"value": "Default",
+			"value": "{{name}}",
 			"type": "string"
 		},
 		{
-			"id": "b7be980c-3bb3-4fa8-a2f2-71923cb2b827",
+			"id": "81c17c8a-6f5c-4716-bdc3-c04b8d2d0f36",
 			"key": "username",
 			"value": "cihadatinctest@gmail.com",
 			"type": "string"
 		},
 		{
-			"id": "ce1f26ea-1d46-414a-8dcc-2c2e628781b9",
+			"id": "19f50484-6843-4a22-b09d-6dffd63c963b",
 			"key": "token",
-			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJvY3RvcGVyZiIsImlkIjoiZF92SGtvVUJXT0xWVEtNZGNZX0UiLCJleHAiOjE2NzQxMjA0ODgsImlhdCI6MTY3NDAzNDA4OCwiaGFzaCI6ImE0NGMzNWRlMDYwMGJiNjdhYTQ0NDA4NDhhY2Y2ODVjIn0.t9Hv0qKD1LYelXBtnJVSqAFIMA8mCIwa6waPuMq4fT4",
+			"value": "{{token}}",
 			"type": "string"
 		}
 	]
