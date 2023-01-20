@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "91123e62-9493-4165-a649-827d8d73cd6c",
+		"name": "com.dummy.restapiexample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-91123e62-9493-4165-a649-827d8d73cd6c"
+	},
+	"item": [
+		{
+			"name": "get",
+			"item": [
+				{
+					"name": "https://dummy.restapiexample.com/api/v1/employees",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e867acb1-16a0-4d1b-8794-e62338bce5d5",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches id : 24\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(24);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches Doris Wilder\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Doris Wilder\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches 21, 61 ve 23\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(21);\r",
+									"    pm.expect(pm.response.text()).to.include(61);\r",
+									"    pm.expect(pm.response.text()).to.include(23);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0aa9a5b3-8c0e-4dc9-9a67-f9723999b554",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummy.restapiexample.com/api/v1/employees",
+							"protocol": "https",
+							"host": [
+								"dummy",
+								"restapiexample",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "7f15802a-b3e7-4834-a150-88c4e80a0c7e"
+		}
+	]
+}

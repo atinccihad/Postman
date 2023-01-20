@@ -12,6 +12,7 @@ files[] = {"id":"24041749-8336d1ef-13e8-41a9-aa31-6f7f6ce2d6fa","path":"API_04.j
 files[] = {"id":"24041749-31885372-20be-4adb-aeea-1a7cf8978d4c","path":"API_Q.json","metaData":{}}
 files[] = {"id":"24041749-10b5b416-7504-4183-891d-7d94eb5dab3d","path":"automationexercise.json","metaData":{}}
 files[] = {"id":"24041749-21ed4625-1666-4750-92b0-361149bc4cf4","path":"com.api.octoperf.json","metaData":{}}
+files[] = {"id":"24041749-91123e62-9493-4165-a649-827d8d73cd6c","path":"com.dummy.restapiexample.json","metaData":{}}
 files[] = {"id":"24041749-ae189f03-6626-463a-a3f8-385f708f364e","path":"com.librarydreams.json","metaData":{}}
 files[] = {"id":"24041749-97554845-cfae-42ac-aa96-2f7792775648","path":"com.medunna.json","metaData":{}}
 files[] = {"id":"24041749-754063d9-60c5-4633-8c6c-6f0e70bb0dde","path":"com.regres.in.json","metaData":{}}
