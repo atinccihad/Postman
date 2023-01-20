@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "3b9cf8d9-314c-4a6b-b030-90e17b0223c6",
+		"name": "com.jsonplaceholder.typicode",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-3b9cf8d9-314c-4a6b-b030-90e17b0223c6"
+	},
+	"item": [
+		{
+			"name": "get",
+			"item": [
+				{
+					"name": "https://jsonplaceholder.typicode.com",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6148f7c2-c119-4688-80b8-f9ab5656caaf",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"test userId\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.userId).to.eql(7);\r",
+									"});\r",
+									"pm.test(\"test id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(123);\r",
+									"});\r",
+									"pm.test(\"test title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.eql(\"esse et quis iste est earum aut impedit\");\r",
+									"});\r",
+									"pm.test(\"test completed\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.completed).to.eql(false);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "d9e1f168-4c02-4b1c-abad-3bd383732741",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/todos/123",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"todos",
+								"123"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "7d7757e0-1b0b-4033-869e-c9a7d666e2f6"
+		}
+	]
+}
