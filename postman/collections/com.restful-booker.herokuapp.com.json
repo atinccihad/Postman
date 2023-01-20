@@ -92,6 +92,109 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "https://restful-booker.herokuapp.com/booking/7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4d511f77-939e-4751-800a-ed0b9d98c463",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches Sally\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Sally\");\r",
+									"});\r",
+									"pm.test(\"Body matches Jackson\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Jackson\");\r",
+									"});\r",
+									"pm.test(\"Body matches checkin\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"2021-09-27\");\r",
+									"});\r",
+									"pm.test(\"Body matches checkout\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"2021-10-29\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "3a9e7b6d-82e5-4f6a-94b9-efeb5402cd7e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking/7",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://restful-booker.herokuapp.com/booking/7",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4d511f77-939e-4751-800a-ed0b9d98c463",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches Eric\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Eric\");\r",
+									"});\r",
+									"pm.test(\"Body matches Smith\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Smith\");\r",
+									"});\r",
+									"pm.test(\"Body matches checkin\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"2017-01-08\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "15ffd073-62b8-44f4-a6d9-7829c2282f88",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking/7",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking",
+								"7"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "ada3019e-0375-4179-becc-c5583657b895"
