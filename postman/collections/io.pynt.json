@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "dc841b6c-9be2-4627-95dc-3d598cfe009c",
+		"name": "io.pynt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-dc841b6c-9be2-4627-95dc-3d598cfe009c"
+	},
+	"item": [
+		{
+			"name": "Check that Postman is running from the desktop application",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "be377302-187f-441b-ba26-86acca6f543d",
+						"exec": [
+							"pm.sendRequest({url: `http://127.0.0.1:5555`}, (error, response) => {\r",
+							"    console.log(error)\r",
+							"    if (error!=null && error[\"code\"] == \"ERR_ORION_LOCALHOST_REQUEST\"){\r",
+							"        postman.setNextRequest(null);\r",
+							"        pm.test(\"\", () => {throw new Error(\"Pynt is supported on Postman desktop application only - please run again from desktop app\")});\r",
+							"    } else {\r",
+							"        pm.test(\"\", () => \"\")\r",
+							"    }\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8b3c27c8-9fb9-41ae-bd8b-9a05b0bda9f9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pynt.io",
+					"protocol": "https",
+					"host": [
+						"pynt",
+						"io"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

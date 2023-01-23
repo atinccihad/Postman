@@ -63,6 +63,51 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "https://dummy.restapiexample.com/api/v1/employee/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4d63f1bc-4d3c-431a-bf6c-fc3030bb7254",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches success\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "70c8e77d-5bf8-4757-88ba-21374a84f8da",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummy.restapiexample.com/api/v1/employee/1",
+							"protocol": "https",
+							"host": [
+								"dummy",
+								"restapiexample",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"employee",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "7f15802a-b3e7-4834-a150-88c4e80a0c7e"
