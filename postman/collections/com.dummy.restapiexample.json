@@ -77,8 +77,7 @@
 									"});\r",
 									"pm.test(\"Body matches success\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"success\");\r",
-									"});\r",
-									""
+									"});"
 								],
 								"type": "text/javascript"
 							}
