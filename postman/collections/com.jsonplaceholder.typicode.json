@@ -85,7 +85,7 @@
 									"});\r",
 									"pm.test(\"test title\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
-									"    pm.expect(jsonData.title).to.eql(\"fugiat veniam minus\");\r",
+									"    pm.expect(jsonData.title).to.eql(\"fugiat veniam minus\" );\r",
 									"});\r",
 									"pm.test(\"test completed\", function () {\r",
 									"    var jsonData = pm.response.json();\r",
