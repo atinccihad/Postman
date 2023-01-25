@@ -1,0 +1,759 @@
+{
+	"info": {
+		"_postman_id": "10b5b416-7504-4183-891d-7d94eb5dab3d",
+		"name": "com.automationexercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24041749-10b5b416-7504-4183-891d-7d94eb5dab3d"
+	},
+	"item": [
+		{
+			"name": "getAllProductsList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e4185539-b802-47ae-b4b7-cab20b3fdf95",
+						"exec": [
+							"// Status code is 200?\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "cf702fce-db1d-43c1-88cc-bcdcd151d1c2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "JeXcsSN0U8F32EkBZooLaPDDVJHYaTpyX5VoOd64ZoNiOFXG0YksdRJvyry5PhlE; __gads=ID=306d05edeb2a339c-2220c59567da0048:T=1672053044:RT=1672053044:S=ALNI_MYf2mbZrNXUr1s_1XocDbtkCsiWQQ; __gpi=UID=00000b985a90fa53:T=1672053044:RT=1672418759:S=ALNI_Ma_3z4ULojP1nD_ajM6bUS-FgCBnA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/productsList",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"productsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postToAllProductsList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6a3062af-4769-4421-8e23-03d0cd328c4b",
+						"exec": [
+							"// Status code is 200 ?\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"// Response body contains 'This request method is not supported.' ?\r",
+							"pm.test(\"Body matches 'responseCode: 405, message: This request method is not supported.'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"This request method is not supported.\");\r",
+							"    pm.expect(pm.response.text()).to.include(405);\r",
+							"    pm.expect(pm.response.text()).to.include(\"responseCode\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "707417cf-873f-453e-8f40-93780bee072d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/productsList",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"productsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBrandsList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e80f9d3b-5e75-47b6-87ee-fa8b499933ed",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "024cb014-2af6-47f7-86e0-ffefbe5915e6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/brandsList",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"brandsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putToAllBrandsList",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e650251d-42dd-4685-9804-4a7d111f34f0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let expectedResponseMessage = \"This request method is not supported.\";\r",
+							"let actualResponseMessage = pm.response.text();\r",
+							"\r",
+							"console.log(actualResponseMessage.valueOf());\r",
+							"\r",
+							"pm.test(\"response message test\",function(){\r",
+							"if( actualResponseMessage.valueOf().match(expectedResponseMessage)){\r",
+							"    console.log(\"PASS\");\r",
+							" }else{\r",
+							"    console.log(\"FAIL\");\r",
+							" }\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "379d995a-acff-4cd0-af8b-3a606295def1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/brandsList",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"brandsList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postToSearchProduct",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9370cf4d-4261-4d8e-9b3a-c1b01d08015b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "d571e57f-db46-40f5-a843-d13ccdd30b25",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "first",
+						"value": "top",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "second",
+						"value": "tshirt",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "third",
+						"value": "jean",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}api/searchProduct?search_product=top",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"searchProduct"
+					],
+					"query": [
+						{
+							"key": "search_product",
+							"value": "top"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postToSearchProductWithoutSearchProductParameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d27e50df-dcdf-4ae7-b25f-c3814b704b3d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"let count = 0;\r",
+							"\r",
+							"let expectedResponseMessage = \"Bad request, search_product parameter is missing in POST request.\";\r",
+							"let actualResponseMessage = pm.response.text();\r",
+							"\r",
+							"console.log(actualResponseMessage.valueOf());\r",
+							"\r",
+							"pm.test(\"response message test\",function(){\r",
+							"if( actualResponseMessage.valueOf().match(expectedResponseMessage)){\r",
+							"    console.log(\"1-PASS\");\r",
+							"    count++;\r",
+							" }else{\r",
+							"    console.log(\"1-FAIL\");\r",
+							" }\r",
+							"});\r",
+							"\r",
+							"let expectedResponseCode = 400;\r",
+							"let actualResponseCode = pm.response.text();\r",
+							"\r",
+							"if(actualResponseCode.valueOf().match(expectedResponseCode)){\r",
+							"    console.log(\"2-PASS\");\r",
+							"    count++;\r",
+							" }else{\r",
+							"    console.log(\"2-FAIL\");\r",
+							"};\r",
+							"\r",
+							"if(count===2){\r",
+							"    console.log(\"all PASS\");\r",
+							"}else{\r",
+							"    console.log(\"all FAIL\");\r",
+							"};"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "b6b20c72-73d6-4b31-898f-19b5c6f9593a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/searchProduct",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"searchProduct"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postToVerifyLoginWithValidDetails",
+			"id": "81aedb16-2f13-4757-b17c-8dd482dc3645",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/verifyLogin?email={{email}}&password={{password}}",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"verifyLogin"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "{{email}}"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postToVerifyLoginWithoutEmailParameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d4c93ac2-fe89-4496-820a-f884b120651b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches Bad request, email or password parameter is missing in POST request.\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bad request, email or password parameter is missing in POST request.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "64f1bcfa-1a7a-4fba-b59d-c3c135ef527a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/verifyLogin?password={{password}}",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"verifyLogin"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "{{password}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteToVerifyLogin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e1d3bbed-c124-4246-8455-b316b8bd88d6",
+						"exec": [
+							"pm.test(\"Body matches This request method is not supported.\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"This request method is not supported.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "302afe44-0609-4649-af33-5d37d8ba6e56",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/verifyLogin",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"verifyLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postToVerifyLoginWithInvalidDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4a780b95-7aba-4089-8b68-e104d4eedc7b",
+						"exec": [
+							"pm.test(\"Body matches ...\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Bad request, email or password parameter is missing in POST request.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "8fc3f9c2-a36b-4a4f-8c4f-fb897b8d23fd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://automationexercise.com/api/verifyLogin?email=wrong&password=wrong",
+					"protocol": "https",
+					"host": [
+						"automationexercise",
+						"com"
+					],
+					"path": [
+						"api",
+						"verifyLogin"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "wrong"
+						},
+						{
+							"key": "password",
+							"value": "wrong"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postToCreate/RegisterUserAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4a780b95-7aba-4089-8b68-e104d4eedc7b",
+						"exec": [
+							"pm.test(\"Body matches ...\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"User created!\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5bd65ac3-fa11-49b6-85e8-9b7151fddec7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/createAccount?name={{email}}&email={{email}}&password={{password}}",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"createAccount"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{email}}",
+							"description": "Cookie"
+						},
+						{
+							"key": "email",
+							"value": "{{email}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						},
+						{
+							"key": "csrftoken",
+							"value": "Jqn238J3BtFyj7ISPB6x6Ep7IBwbkG9bZFiF2aVyuBbgLWWhCFr1lNG2U0Jkvr9Z",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMethodToDeleteUserAccount",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4a780b95-7aba-4089-8b68-e104d4eedc7b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "9a450c86-6185-44c8-b875-8ce4ac64e936",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/deleteAccount?email={{email}}&password={{password}}",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"deleteAccount"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "{{email}}",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putMethodToUpdateUserAccount",
+			"id": "1de51319-d785-410e-9966-a8daaba44b9f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Jqn238J3BtFyj7ISPB6x6Ep7IBwbkG9bZFiF2aVyuBbgLWWhCFr1lNG2U0Jkvr9Z",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/updateAccount?name=atinc&email=cihadatinctest@gmail.com&password=Test1234@&title =QA&birth_date=12&birth_month=03&birth_year=1988&firstname=cihad&lastname=atınç&company=QA&address1=TC&address2=TC&country=TC&zipcode=555&state=88&city=35&mobile_number=555-555-5555",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"updateAccount"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "atinc",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "cihadatinctest@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test1234@",
+							"type": "text"
+						},
+						{
+							"key": "title ",
+							"value": "QA",
+							"type": "text"
+						},
+						{
+							"key": "birth_date",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "birth_month",
+							"value": "03",
+							"type": "text"
+						},
+						{
+							"key": "birth_year",
+							"value": "1988",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "cihad",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "atınç",
+							"type": "text"
+						},
+						{
+							"key": "company",
+							"value": "QA",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "TC",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "TC",
+							"type": "text"
+						},
+						{
+							"key": "country",
+							"value": "TC",
+							"type": "text"
+						},
+						{
+							"key": "zipcode",
+							"value": "555",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "88",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "35",
+							"type": "text"
+						},
+						{
+							"key": "mobile_number",
+							"value": "555-555-5555",
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserAccountDetailByEmail",
+			"id": "57bafdb6-16fb-41b2-92ee-3acede3447f3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Jqn238J3BtFyj7ISPB6x6Ep7IBwbkG9bZFiF2aVyuBbgLWWhCFr1lNG2U0Jkvr9Z",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}api/getUserDetailByEmail?email={{email}}",
+					"host": [
+						"{{baseUrl}}api"
+					],
+					"path": [
+						"getUserDetailByEmail"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "{{email}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "Jqn238J3BtFyj7ISPB6x6Ep7IBwbkG9bZFiF2aVyuBbgLWWhCFr1lNG2U0Jkvr9Z",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "208d6734-d8e8-4dc6-8ce2-d2fe6d1db947",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "89a72134-aa47-432f-b7eb-9bd924a68446",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

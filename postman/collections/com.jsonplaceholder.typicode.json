@@ -63,6 +63,66 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "https://jsonplaceholder.typicode.com",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6148f7c2-c119-4688-80b8-f9ab5656caaf",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"test userId\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.userId).to.eql(1);\r",
+									"});\r",
+									"pm.test(\"test id\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(3);\r",
+									"});\r",
+									"pm.test(\"test title\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.eql(\"fugiat veniam minus\");\r",
+									"});\r",
+									"pm.test(\"test completed\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.completed).to.eql(false);\r",
+									"});\r",
+									"pm.test(\"test completed\", function () {\r",
+									"    var jsonData = pm.headers.have(\"Server\",\"cloudflare\");\r",
+									"    pm.expect(jsonData.completed).to.eql();\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "e2d0c9fe-b714-440f-9bba-6b84c15248b9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/todos/3",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"todos",
+								"3"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "7d7757e0-1b0b-4033-869e-c9a7d666e2f6"
