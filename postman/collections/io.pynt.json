@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "be377302-187f-441b-ba26-86acca6f543d",
+						"id": "45d7f656-44d8-471e-83f9-4bc0b2df7f20",
 						"exec": [
 							"pm.sendRequest({url: `http://127.0.0.1:5555`}, (error, response) => {\r",
 							"    console.log(error)\r",
