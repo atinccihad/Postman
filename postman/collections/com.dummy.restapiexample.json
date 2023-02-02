@@ -110,6 +110,79 @@
 				}
 			],
 			"id": "7f15802a-b3e7-4834-a150-88c4e80a0c7e"
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "https://dummy.restapiexample.com/api/v1/create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8c54189d-e922-47fd-8aa9-1a714f69b311",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches atinc\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"atinc\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "aa79ee1c-88a2-418b-b157-a5eef362faf6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Test1234@",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "cihadatinctest@gmail.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\":\"atinc\",\r\n    \"salary\":\"55\",\r\n    \"age\":\"35\",\r\n    \"profile_image\":\"\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummy.restapiexample.com/api/v1/create",
+							"protocol": "https",
+							"host": [
+								"dummy",
+								"restapiexample",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "75fa2576-897c-4559-96cc-a93db7bf959f"
 		}
 	]
 }
