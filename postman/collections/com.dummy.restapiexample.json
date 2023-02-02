@@ -15,7 +15,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e867acb1-16a0-4d1b-8794-e62338bce5d5",
+								"id": "9a9275e6-77c6-4033-9854-bea7618174a9",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
@@ -107,6 +107,30 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "https://restful-booker.herokuapp.com/booking",
+					"id": "f2dd2591-a3f6-4bf3-a99b-3d5d8ff88753",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://restful-booker.herokuapp.com/booking",
+							"protocol": "https",
+							"host": [
+								"restful-booker",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "7f15802a-b3e7-4834-a150-88c4e80a0c7e"
@@ -127,6 +151,9 @@
 									"});\r",
 									"pm.test(\"Body matches atinc\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"atinc\");\r",
+									"});\r",
+									"pm.test(\"Body matches, Successfully! Record has been added.\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Successfully! Record has been added.\");\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -183,6 +210,38 @@
 				}
 			],
 			"id": "75fa2576-897c-4559-96cc-a93db7bf959f"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "1117628eca204d2",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "517c4be5-b59c-45a6-b65d-3c4745ea95af",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "deb35496-25f3-4ab6-89c4-9765b16dde5f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
