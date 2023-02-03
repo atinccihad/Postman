@@ -204,6 +204,20 @@
 			"item": [
 				{
 					"name": "https://restful-booker.herokuapp.com/booking",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c37336b1-56e8-4fd1-942d-b7613a23f18f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "ff1a8c4c-32aa-4293-a592-853679be163f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
