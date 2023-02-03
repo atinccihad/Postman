@@ -210,6 +210,121 @@
 				}
 			],
 			"id": "75fa2576-897c-4559-96cc-a93db7bf959f"
+		},
+		{
+			"name": "put",
+			"item": [
+				{
+					"name": "https://dummy.restapiexample.com/api/v1/update/35",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7635df30-8037-46ad-94e0-861535cd0535",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches Successfully! Record has been updated.\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Successfully! Record has been updated.\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4f8a8c8a-9142-44a7-92e7-749896d0a3d6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"name\": \"test\",\r\n        \"salary\": \"123\",\r\n        \"age\": \"36\",\r\n        \"id\": 4895\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummy.restapiexample.com/api/v1/update/4895",
+							"protocol": "https",
+							"host": [
+								"dummy",
+								"restapiexample",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"update",
+								"4895"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "816d757f-5932-4935-8838-83e6a1641b2a"
+		},
+		{
+			"name": "delete",
+			"item": [
+				{
+					"name": "https://dummy.restapiexample.com/api/v1/delete/4895",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1a288206-5a87-478b-8388-81278cf0d6f9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches success\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+									"});\r",
+									"pm.test(\"Body matches successfully! deleted Records\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Successfully! Record has been deleted\");\r",
+									"});\r",
+									"pm.test(\"Body matches 4895\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"4895\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "33d59253-d943-419c-aedb-e90899eeabed",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dummy.restapiexample.com/api/v1/delete/4895",
+							"protocol": "https",
+							"host": [
+								"dummy",
+								"restapiexample",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"delete",
+								"4895"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "d77d2ce3-be47-4fac-ac29-9b6e847a9dc2"
 		}
 	],
 	"auth": {
