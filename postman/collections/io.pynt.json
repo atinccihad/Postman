@@ -22,7 +22,7 @@
 							"    } else {\r",
 							"        pm.test(\"\", () => \"\")\r",
 							"    }\r",
-							"})"
+							"});"
 						],
 						"type": "text/javascript"
 					}
