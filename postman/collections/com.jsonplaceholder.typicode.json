@@ -126,6 +126,63 @@
 				}
 			],
 			"id": "7d7757e0-1b0b-4033-869e-c9a7d666e2f6"
+		},
+		{
+			"name": "patch",
+			"item": [
+				{
+					"name": "https://jsonplaceholder.typicode.com/todos/198",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "964be6a9-37bf-40e4-a3bd-7d1a89bea837",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches Wash the dishes\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Wash the dishes\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "80d71b0e-b64c-4d29-a8e1-c3694297aa52",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\":21,\r\n  \"title\":\"Wash the dishes\",\r\n  \"completed\":false\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/todos/198",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"todos",
+								"198"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "6dd8abd4-9d70-449e-bd06-2710c257b56d"
 		}
 	]
 }
