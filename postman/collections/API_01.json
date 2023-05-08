@@ -8,6 +8,20 @@
 	"item": [
 		{
 			"name": "https://jsonplaceholder.typicode.com/todos/200",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5414f284-bd29-4a2e-916f-83dfb796b7c6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"id": "dfbfd3a2-6615-4b0f-888b-0d56a42905a4",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
